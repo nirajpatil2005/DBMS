@@ -1,0 +1,2858 @@
+ 
+Bansilal Ramnath Agarwal Charitable Trust's 
+Vishwakarma Institute of Information Technology, Pune-48 
+(An Autonomous Institute affiliated to Savitribai Phule Pune University) 
+ 
+Department of Computer Science and 
+Engineering (Artificial Intelligence) 
+ 
+ 	Lab Manual 
+ 
+Database Management System Lab 
+CA21232 
+Prepared by, 
+Ms. Pradnya Mehta 
+ 
+
+
+
+            Name:Niraj S Patil
+Roll no:281003
+Div:A
+Batch:A1
+
+ SY  
+Semester I Academic Year 2024-25 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Programme Outcomes: 
+ 
+Students are expected to know and be able - 
+ 
+1. To apply knowledge of mathematics, science, engineering fundamentals, problem solving skills, algorithmic analysis and mathematical modeling to the solution of complex engineering problems. 
+ 
+2. To analyze the problem by finding its domain and applying domain specific skills 
+ 
+3. To understand the design issues of the product/software and develop effective solutions with appropriate consideration for public health and safety, cultural, societal, and environmental considerations. 
+ 
+4. To find solutions of complex problems by conducting investigations applying suitable techniques. 
+ 
+5. To adapt the usage of modern tools and recent software. 
+ 
+6. To contribute towards society by understanding the impact of Engineering on global aspect. 
+ 
+7. To understand environment issues and design a sustainable system. 
+ 
+8. To understand and follow professional ethics. 
+ 
+9. To function effectively as an individual and as member or leader in diverse teams and interdisciplinary settings. 
+ 
+10. To demonstrate effective communication at various levels. 
+ 
+11. To apply the knowledge of Computer Engineering for development of projects, and its finance and management. 
+ 
+12. To keep in touch with current technologies and inculcate the practice of lifelong learning. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Course Objectives: 
+ 
+1. To understand the fundamental concepts of database management  
+ 
+2. To provide a strong formal foundation in database concepts, technology  
+ 
+3. To give systematic database design approaches covering conceptual design, logical design and an overview of physical design  
+ 
+4. To learn basic issues of transaction management and concurrency control  
+ 
+5. To learn and understand various Database Architectures and Applications  
+ 
+6. To learn a powerful, flexible and scalable general purpose database to handle big data applications  
+ 
+Course Outcome:  
+1. Design ER model and convert ER diagram into database tables  
+2. Design Schema with appropriate normal form and Implement SQL Queries  for given requirements,Using different SQL Concepts 
+3. Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 4. 	Create and Design NoSQL queries for given requirements to handle  databases of varying complexities 
+ 
+ 
+ 
+ 
+ 
+ 
+  	 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+INDEX 
+Sr. 
+No
+. Group Title of Assignment CO PO 1 A  Study of ER diagram and conversion of ER diagram into tables in normalized form CO1 PO3, PO5, 
+PO6,PO7,PO9 2 
+ Design and Develop SQL DDL statements which demonstrate the use of SQL objects such as Table, View, Index, Sequence, Synonym CO1
+CO2 PO2,PO3,PO5,P
+O6,PO7,PO9,PO
+11,PO12 Design SQL queries for suitable database application using SQL DML statements: 
+Insert, Select, Update, Delete with operators, functions, and set operators. CO1 
+CO2 PO2,PO3,PO5,P
+O6,PO7,PO9,PO
+11,PO12 
+ 3 Design SQL queries for suitable database application using SQL DML statements: all types of Join, Sub-Query and View. CO1 
+CO2 PO2,PO3,PO5,P
+O6,PO7,PO9,PO
+11,PO12 
+ 4 B Unnamed PL/SQL code block: Use of Control structure and Exception handling is mandatory. 
+Write 	a 	PL/SQL block of code for the 	following requirements:- Schema: 
+1. Borrower(Rollin, Name, DateofIssue, NameofBook, Status) 
+2. Fine(Roll_no,Date,Amt) 
+1. Accept roll_no & name of book from user. 
+2. Check the number of days (from date of issue), if days are between 15 to 30 then fine amount will be Rs 5per day. 
+3. If no. of days>30, per day fine will be Rs 50 per day & for days less than 30, Rs. 5 per day. 
+4. After submitting the book, status will change from I to R. ? If the condition of fine is true, then details will be stored into a fine table. OR CO1
+CO2 PO2,PO3,PO5, PO9,PO12 5 Cursors: (All types: Implicit, Explicit, Cursor FOR Loop, Parameterized Cursor) 
+Write a PL/SQL block of code using parameterized Cursor, that will merge the data available in the newly created table N_RollCall with the data available in the table O_RollCall. If the data in the first table already exist in the second table then that data should be skipped. CO1
+CO2 PO2,PO3,PO5, PO9,PO12 6 PL/SQL Stored Procedure and Stored Function. 
+Write a Stored Procedure namely proc_Grade for the categorization of student. If marks scored by students in examination is <=1500 and marks>=990 then student will be placed in distinction category if marks scored are between 989 and900 category is first class, if marks 899 and 825 category is Higher Second Class Write a PL/SQL block for using procedure created with above requirement. 
+Stud_Marks(name,total_marks),Result(Roll,Name, Class) OR CO1
+CO2 PO2,PO3,PO5, PO9,PO12 7 Database Trigger (All Types: Row level and Statement level triggers, Before and After Triggers). Write a database trigger on the Library table. The System should keep track of the records that are being updated or deleted. The old value of updated or deleted records should be added in the Library_Audit table.Frame the problem statement for writing Database Triggers of all types, in-line with the above statement. The problem statement should clearly state the requirements. CO1
+CO2 PO2,PO3,PO5, PO9,PO12 8 B Database Connectivity: write a program to implement MySQL/Oracle/MongoDB database connectivity with any front end language to implement Database navigation operations (add, delete, edit etc.)  CO1
+CO2 
+CO3 
+CO6 PO2,PO3,PO5, 
+PO6,PO7,PO9, PO11,PO12 9  
+ 
+ 
+ 
+ 
+C Design and Develop MongoDB Queries using CRUD operations. (Use CRUD operations, SAVE method, logical operators) CO6 PO1.PO2,PO3 
+PO5,PO9,PO11, PO12 10 Implement aggregation and indexing with suitable examples using MongoDB. OR CO6 PO1.PO2,PO3 
+PO5,PO9,PO11, PO12 11 Implement Map reduce operation with suitable examples using MongoDB. CO6 PO1.PO2,PO3 
+PO5,PO9,PO11, PO12 12 Mini Project- 
+Using the database concepts covered in Group A and Group B, develop an software application : CO1 
+CO2
+CO3 
+CO6 PO2,PO3,PO5, 
+ 
+PO9,PO11,PO12  
+Software Required: 
+ 
+1 	64 bit open source operating system- Ubuntu 
+1. MySQL 
+2. Oracle 11g Express Edition(Ubuntu 16.04TLS) 
+3. MongoDB 
+4. Java 
+ 
+ 
+ 
+ 
+Write-ups must include:  
+ 
+? Group 
+? Assignment No. 
+? Aim  
+? Problem Statement  
+? Prerequisites  
+? Course Objectives  
+? Course Outcomes 
+? Theory(in brief) 
+? Test Cases 
+? Conclusion 
+? FAQs: 
+? Output: Soft copy of program with output. 
+ 
+  
+ 
+ 
+  
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+  
+GROUP: A 
+ASSIGNMENT NO: 1 
+Aim: Case Study of ER diagram for  Skills Matching Management System
+Problem Statement: 
+Study of ER diagram and conversion of ER diagram into RDBMS 
+ 
+Course Objectives: 
+1. To develop Database programming skills 
+2. To develop basic Database administration skills 
+3. To  understand and execute process of software application development Course Outcome:   	 
+Design  ER model and convert ER diagram into database tables  
+Theory: 
+ER Diagram  
+ER Diagram stands for Entity Relationship Diagram, also known as ERD is a diagram that displays the relationship of entity sets stored in a database. In other words, ER diagrams help to explain the logical structure of databases. ER diagrams are created based on three basic concepts: entities, attributes and relationships. 
+Components of the ER Diagram 
+This model is based on three basic concepts: 
+? Entities 
+? Attributes 
+? Relationships 
+ER Diagrams Symbols & Notations 
+Entity Relationship Diagram Symbols & Notations mainly contains three basic symbols which are rectangle, oval and diamond to represent relationships between elements, entities and attributes. There are some sub-elements which are based on main elements in ERD Diagram. ER Diagram is a visual representation of data that describes how data is related to each other using different ERD Symbols and Notations. 
+Following are the main components and its symbols in ER Diagrams: 
+? Rectangles: This Entity Relationship Diagram symbol represents entity types 
+? Ellipses : Symbol represent attributes 
+? Diamonds: This symbol represents relationship types 
+? Lines: It links attributes to entity types and entity types with other relationship types 
+? Primary key: attributes are underlined 
+? Double Ellipses: Represent multi-valued attributes 
+ 
+ 
+Step 1: E-R Diagram 
+
+ 
+ 
+Step 2: Converting the E-R Diagram into Tables 
+b. Converting entity to table and attribute to columns 
+User Basic info:
+User IDPrimary Key Name  Email  Major   
+User Authentication:
+EmailPrimary keyUser IDForeign  Key(user basic info) Password  
+ Educational Details:
+Education  IDPrimary Key User IDForeign  Key(user basic info)College  City  
+
+Skills:
+ 
+
+
+Skill  IDPrimary Key User IDForeign  Key(user basic info)Proficiency Skills 
+ Users Previous Project:
+Project IDPrimary Key User IDForeign  Key(user basic info)Project name Description 
+Projects:
+
+Project IDPrimary Key User IDForeign  Key(user basic info)Project name Description Project DeadlineTeam leaderForeign  Key(user basic info)
+
+
+Step 3: Mapping of Attributes 
+? Simple Attributes 
+Simple Attributes which can not be divided into subparts. 
+Example: Proficiency in Skills 
+ 
+? Composite Attributes 
+Composite Attributes which can be divided into subparts. 
+Example: Name of User
+ 
+Step 4: Mapping of Relationships b. Foreign Key approach 
+User Authentication"
+User IDContent table makes foreign key reference to User ID of user_basic_info table
+ Education details:
+User IDContent table makes foreign key reference to User ID of user_basic_info table
+Skills:
+User IDContent table makes foreign key reference to User ID of user_basic_info table
+User Previous Project:
+User IDContent table makes foreign key reference to User ID of user_basic_info table
+Projects:
+User IDContent table makes foreign key reference to User ID of user_basic_info tableTeam leaderForeign  Key(user basic info)
+ 
+Step 5: Identifying the relationships a Skills Mathing Management System 
+* User and Authentication: The user_basic_info table is linked with the user_auth table via the user_id. Each user has one authentication record (1-to-1 relationship).
+* User and Skills: Each user can have multiple skills listed in the user_skills table, forming a 1-to-many relationship. The user_id in the user_skills table is a foreign key pointing to the user_basic_info table.
+* User and Education: The user_education table captures the education details of each user. A 1-to-many relationship exists between the user_basic_info and user_education tables.
+* User and Previous Projects: A user can have multiple previous projects listed in the users_prevproj table. This establishes another 1-to-many relationship with the user_basic_info table.
+* User and Projects: The projects table is linked to the user as a project leader via the leader_id. This is a 1-to-many relationship, meaning one user can lead multiple projects.
+* Project and Notifications: The notifications table tracks all the notifications related to project activities, with a many-to-many relationship between users and projects through notifications.
+ 
+ 
+ 
+ 
+Conclusion:  
+Outcome of the experiment is students are  able to,  	 
+Design  ER model and convert ER diagram into database tables for handling database as per given requirements 
+ 
+FAQS: 
+1. Explain the distinctions among the terms primary key, candidate key, and superkey 
+2. What is an entity? Give examples of entities 
+3. Define and give examples to illustrate the four types of attributes in the database. 
+4. Explain the four types of mapping cardinality with examples.  
+5. Define discriminator or partial key of a weak entity set. Give an example.  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 	
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+GROUP: A 
+ASSIGNMENT NO: 2  
+Aim: Design and Develop SQL DDL statements which demonstrate the use of SQL objects such as Table, View, Index, Sequence, Synonym 
+Problem Statement: 
+1. Create table Customers with schema (cust_id, cust_name, product, quantity, total_price)
+
+mysql> create table Customers(cust_id int auto_increment primary key, cust_name varchar(100), product varchar(100), quantity int, total_price int);
+
+
+2. Use sequence/ auto-increment for incrementing customer ID and Insert 5 customer records to the table Customers 
+
+mysql> insert into Customers(cust_name, product, quantity, total_price) values('Rushi', 'laptop', 1, 10000),('Rahul', 'mobile', 2, 20000),('om', 'tablet', 4, 50000),('Yash', 'headphone', 3, 2500),('Virat', 'bat', 2, 3000);
+
+3. Alter the table Customers by adding one column "price_per_qnty? 
+
+mysql> alter table Customers add column price_per_qnty int;
+
+
+
+
+4. Create view "Cust_View? on Customers displaying customer ID, customer name
+
+mysql> create view cust_view as select cust_id, cust_name from Customers;
+
+mysql> select * from cust_view;
+)
+ 
+5. Update the view "Cust_View? to display customer ID, product, total price 
+
+6. Drop the view "Cust_View? 
+
+mysql> drop view cust_view;
+
+7. Create index "Cust_index? on customer name 
+
+mysql> create index cust_index on Customers (cust_name);
+
+8. Drop index "Cust_index? 
+
+mysql> drop index cust_index on Customers;
+
+
+9. Use sequence/ auto-increment for incrementing customer ID 
+
+Done while creating the table with auto_increment
+
+10. Use the name alias for table Customers (rename the table in query) 
+
+mysql> select * from Customers as cust2;
+
+11. Drop the table Customers 
+
+drop table Customers;
+
+
+
+
+PREREQUISITE: Basic queries for creation of view, indexes & tables 
+ 
+Course Objectives: 
+1. To develop Database programming skill 
+2. To develop basic Database administration skills 
+3. To understand and execute process of software application development Course Outcome:  
+  	  	  	 
+1. Design ER model and convert ER diagram into database tables 
+2. Design Schema with appropriate normal form and Implement SQL Queries for given requirements, Using different SQL Concept 
+Theory: 
+Creating Databases: The "Create Database? statement is used to create a new SQL database. Database names should be unique within the RDBMS. 
+Syntax: create database <Database Name>; 
+Example: mysql> create database testDB; 
+The 'use' statement is used to select any existing database in SQL schema. Syntax: use <Database Name>; Creating Tables: 
+Creating a basic table involves naming the table and defining its columns and each column's data type. The 
+"CREATE TABLE? statement is used to create a new table. Syntax: 
+CREATE TABLE <table name>( 
+   <column1> < datatype>, 
+   <column2>  <datatype>, 
+  < columnn>  <datatype>, 
+   ..... 
+   <column> <datatype>, 
+   PRIMARY KEY (one or more columns) 
+); 
+To describe table design, we can use "desc" query. Eg. mysql> desc table_name Dropping Tables: 
+Syntax: 
+DROP TABLE table_name; Creating Views: 
+Database views are created using the CREATE VIEW statement. Views can be created from a single table, multiple tables, or another view. To create a view, a user must have the appropriate system privilege according to the specific implementation. 
+Syntax 
+CREATE VIEW view_name AS SELECT column1, column2..... FROM table_name   WHERE [condition]; Dropping View: 
+Syntax 
+DROP VIEW view_name; Creating Indexes: 
+Indexes are special lookup tables that the database search engine can use to speed up data retrieval.  An index is a pointer to data in a table. An index in a database is very similar to an index in the back of a book. For example, if you want to reference all pages in a book that discuss a certain topic, you first refer to the index, which lists all topics alphabetically and are then referred to one or more specific page numbers. An index helps speed up SELECT queries and WHERE clauses, but it slows down data input, with UPDATE and INSERT statements. Indexes can be created or dropped with no effect on the data. Creating an index involves the CREATE INDEX statement, which allows you to name the index, to specify the table and which column or columns to index, and to indicate whether the index is in ascending or descending order. Indexes can also be unique, similar to the UNIQUE constraint, in that the index prevents duplicate entries in the column or combination of columns on which there's an index. 
+ Syntax: 
+CREATE INDEX index_name ON table_name; Dropping Index: 
+Syntax:DROP INDEX index_name; 
+Test Cases: 
+T_ID T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Autoincrement Auto 	incrementing 	the 
+Customer ID in customer table Customer Ids are incrementing automatically  Pass T_P2 
+ Altering 
+table 
+ Writing SQL query for adding one new column to existing table Customer 'Price_per_Qnty' 
+column 	added 
+successfully Pass T_P3 Duplicate Primary Key Inserting record with same primary key value to those of existing record in Customers table Record doesn't get inserted Fail  
+Conclusion:  
+Outcome of the experiment is students are able to 1. 	Create view, Index, synonyms and sequence. 
+2. 	Create schema with normalized form using various DDL statements 
+ 
+FAQS: 
+Q.1. How is data independence of application programs ensured in a DBMS? 
+ 
+Q.2. List the different types of indexes? 
+ 
+Q.3. What is schema and instance? 
+ 
+Q4. What is the referential integrity key? 
+ 
+Q.5. When should indexes be avoided? 
+ 
+OUTPUT: Soft Copy of the program with output.  
+
+
+
+
+
+ GROUP: A
+ASSIGNMENT NO: 3 
+Aim: Design queries for suitable database application using SQL DML statements: Insert, Select, Update, Delete with operators, functions, and set operator 
+Problem Statement: 
+
+1. Create table Student with schema (roll_no, name, division, branch, city, marks)
+Query:
+CREATE TABLE Student (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(255),
+    division CHAR(2),
+    branch VARCHAR(50),
+    city VARCHAR(50),
+    marks DECIMAL(5, 2)
+);
+
+
+2. Insert 10 records to the table students
+Query:
+INSERT INTO Student (roll_no, name, division, branch, city, marks)
+VALUES
+     (1, 'Anit', 'A', 'CS', 'Pune', 85.5),
+    (2, 'Arjun', 'B', 'MECH', 'Mumbai', 70.0),
+    (3, 'Chaitanya', 'A', 'AIDS', 'Pune', 84.0),
+    (4, 'Gajendra', 'BE', 'CIVIL', 'Mumbai', 90.0),
+    (5, 'Sarthak', 'A', 'ELECTRICAL', 'Pune', 60.0),
+    (6, 'Vardhan', 'B', 'AI', 'Mumbai', 76.0),
+    (7, 'OM', 'A', 'AIML', 'Pune', 72.0),
+    (8, 'Vyankatesh', 'BE', 'ENTC', 'Mumbai', 58.0),
+    (9, 'Atharva', 'A', 'IOT', 'Pune', 94.0),
+ (10, 'Shardul', 'B', 'IT', 'Mumbai', 62.5);
+
+
+3. List all the student names with their corresponding city
+Query: SELECT name, city FROM Student; 
+
+
+4. List all the distinct names of the students
+Query:
+SELECT DISTINCT name FROM Student;
+
+5. List all the records of the students with all the attributes
+Query:
+SELECT* FROM Student; 
+
+6. List all the students whose marks are greater than 75
+Query:
+SELECT * FROM Student WHERE marks > 75;
+
+7. List all the students whose name starts with the alphabet "S?
+Query:
+SELECT * FROM Student WHERE name LIKE 'S%';
+
+8. List all the students whose marks are in the range of 50 to 60
+Query:
+SELECT * FROM Student WHERE marks BETWEEN 50 AND 60;
+
+9. List all the students whose branch is "computer? and city is "Pune?
+Query:
+SELECT * FROM Student WHERE branch = 'CS' AND city = 'Pune';
+
+10. Update the branch of a student to "IT? whose roll number is 9
+Query:
+UPDATE Student SET branch = 'IT' WHERE roll_no = 9;
+
+11. Delete the student records whose division is "BE?
+Query:
+DELETE FROM Student WHERE division = 'BE';
+
+12. Create another table TE_Students with Schema( roll_no, name)
+Query:
+CREATE TABLE TE_Students (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+
+13. List all the roll numbers unionly in the relations Student and TE_Students
+Query:
+SELECT roll_no FROM Student
+UNION
+SELECT roll_no FROM TE_Students;
+
+14. Display name of all the students belonging to relation Student in Upper case
+Query:
+SELECT UPPER(name) AS uppercase_name FROM Student;
+
+
+15. Display the binary and hex equivalent of marks for all the students belonging to Student relation
+Query:
+SELECT name, marks,
+       CAST(marks AS BINARY) AS binary_marks,
+       CAST(marks AS CHAR) AS hex_marks
+FROM Student;
+
+
+
+PREREQUISITE: Knowledge of Basic queries for SQL
+
+Course Objectives:
+1. To develop Database programming skills
+2. To develop basic Database administration skills
+3. To understand and execute process of software application development
+
+Course Outcome:
+1. Design ER model and convert ER diagram into database tables
+2. Design Schema with appropriate normal form and Implement SQL Queries for given
+requirements,Using different SQL Concepts
+
+Theory:
+Inserting records to the Relation:
+The INSERT INTO Statement is used to add new rows of data to a table in the database.
+
+Syntax:
+
+1. INSERT INTO TABLE_NAME (column1, column2, column3,...columnN) VALUES (value1, value2,
+value3,...valueN);
+Here, column1, column2, column3,...columnN are the names of the columns in the table into which you want
+to insert the data.
+2. You may not need to specify the column(s) name in the SQL query if you are adding values for all the
+columns of the table. But make sure the order of the values is in the same order as the columns in the table.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Conclusion:
+
+1. Execute various DML commands with its clauses, functions, operators and set operators. 
+2. Implement DML SQL Queries for the given requirements. 
+
+FAQS:  
+
+
+      
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+ GROUP: A 
+ASSIGNMENT NO: 4 
+Aim: Design queries for suitable database application using SQL DML statements: all types of Join, SubQuery . 
+Problem Statement: 
+Q Create table Customers with schema (ID, name, age, address, salary) 
+R Create table Orders with Schema (O_ID, o_date, customer_id, amount) 
+S Insert 5 records to each table keeping few customer ids common to both the tables 
+T Perform the inner join on customers and orders table to enlist the id, name, amount and o_date 
+U Perform the left outer join on customers and orders table to enlist the id, name, amount and o_date 
+V Perform the right outer join on customers and orders table to enlist the id, name, amount and o_date 
+W Perform the full outer join on customers and orders table to enlist the id, name, amount and o_date by using "union all? set operation 
+X Perform the self join on customers table to enlist the pair of customers belonging to same address  
+Y Perform the Cross/ Cartesian join on customers and orders table to enlist the id, name, amount and o_date  10. Design the sub query with select statement for displaying all the details of the customers having salary greater than 20000 
+1. Create a backup table- "cust_bkp? of the table customers by using insert statement with the subquery  
+2. Update the salaries by 10% of all the customers(in customers table) having age greater than or equals to 
+24 by using sub query with update clause( by using backup table cust_bkp) 
+
+13. Delete all the customers having age greater than 26 by using delete clause with the subquery  PREREQUISITE: Knowledge of all the join types supported by SQL. 
+ 
+Course Objectives: 
+1. To develop Database programming skills 
+2. To develop basic Database administration skills 
+3. To understand and execute process of software application development Course Outcome:  
+1. Design ER model and convert ER diagram into database tables  
+2. Design Schema with appropriate normal form and Implement SQL Queries for given requirements, Using different SQL Concepts Theory: 
+Joins: 
+The SQL Joins clause is used to combine records from two or more tables in a database. A JOIN is a means for combining fields from two tables by using values common to each. 
+Several operators can be used to join tables, such as =, <, >, <>, <=, >=, !=, BETWEEN, LIKE, and NOT; they can all be used to join tables. However, the most common operator is the equal to symbol. 
+There are different types of joins available in SQL - 
+? INNER JOIN - returns rows when there is a match in both tables. 
+? LEFT JOIN - returns all rows from the left table, even if there are no matches in the right table. 
+? RIGHT JOIN - returns all rows from the right table, even if there are no matches in the left table. ? 	FULL JOIN - returns rows when there is a match in one of the tables. 
+? SELF JOIN - is used to join a table to itself as if the table were two tables, temporarily renaming at least one table in the SQL statement. 
+? CARTESIAN JOIN - returns the Cartesian product of the sets of records from the two or more joined tables. 
+? Inner Join: 
+The most important and frequently used of the joins is the INNER JOIN. They are also referred to as an EQUIJOIN. The INNER JOIN creates a new result table by combining column values of two tables (table1 and table2) based upon the join-predicate. The query compares each row of table1 with each row of table2 to find all pairs of rows which satisfy the join-predicate. When the join-predicate is satisfied, column values for each matched pair of rows of A and B are combined into a result row. 
+Syntax: 
+SELECT table1.column1, table2.column2... FROM table1 INNER JOIN table2 ON table1.common_field = table2.common_field; 
+? Left Join 
+The SQL LEFT JOIN returns all rows from the left table, even if there are no matches in the right table. This means that if the ON clause matches 0 (zero) records in the right table; the join will still return a row in the result, but with NULL in each column from the right table. 
+This means that a left join returns all the values from the left table, plus matched values from the right table or NULL in case of no matching join predicate. Syntax: 
+SELECT table1.column1, table2.column2... FROM table1 LEFT JOIN table2 ON table1.common_field = table2.common_field; 
+? Right Join: 
+The SQL RIGHT JOIN returns all rows from the right table, even if there are no matches in the left table. This means that if the ON clause matches 0 (zero) records in the left table; the join will still return a row in the result, but with NULL in each column from the left table. 
+This means that a right join returns all the values from the right table, plus matched values from the left table or NULL in case of no matching join predicate. 
+Syntax: 
+SELECT table1.column1, table2.column2... FROM table1 RIGHT JOIN table2 ON table1.common_field = table2.common_field; 
+? Full Join: 
+The SQL FULL JOIN combines the results of both left and right outer joins.The joined table will contain all records from both the tables and fill in NULLs for missing matches on either side. MySQL does not support full join so we have to use the set operation "UnionAll? for left outer join and the right outer join on those two tables. 
+Syntax: 
+<Left Outer Join Query> Union All <Right Outer Join Query> e) Self Join: 
+The SQL SELF JOIN is used to join a table to itself as if the table were two tables; temporarily renaming at least one table in the SQL statement. Here, the WHERE clause could be any given expression based on your requirement. 
+Syntax: SELECT a.column_name, b.column_name... FROM table1 a, table1 b  
+WHERE a.common_field = b.common_field; f) Cartesian or Cross Join: 
+The CARTESIAN JOIN or CROSS JOIN returns the Cartesian product of the sets of records from two or more joined tables. Thus, it equates to an inner join where the join-condition always evaluates to either True or where the join-condition is absent from the statement. 
+Syntax: SELECT table1.column1, table2.column2...FROM  table1, table2 [, table3 ] 
+Sub-Query in SQL: 
+A Subquery or Inner query or a Nested query is a query within another SQL query and embedded within the WHERE clause. A subquery is used to return data that will be used in the main query as a condition to further restrict the data to be retrieved. Subqueries can be used with the SELECT, INSERT, UPDATE, and DELETE statements along with the operators like =, <, >, >=, <=, IN, BETWEEN, etc. 
+There are a few rules that subqueries must follow - ? 	Subqueries must be enclosed within parentheses. 
+Q A subquery can have only one column in the SELECT clause, unless multiple columns are in the main query for the subquery to compare its selected columns. 
+R An ORDER BY command cannot be used in a subquery, although the main query can use an ORDER BY. The GROUP BY command can be used to perform the same function as the ORDER BY in a subquery. 
+S Subqueries that return more than one row can only be used with multiple value operators such as the IN operator. 
+T The SELECT list cannot include any references to values that evaluate to a BLOB, ARRAY, CLOB, or NCLOB. 
+U A subquery cannot be immediately enclosed in a set function. 
+V The BETWEEN operator cannot be used with a subquery. However, the BETWEEN operator can be used within the subquery. 
+1. Sub-Query with Select Statement: 
+Subqueries are most frequently used with the SELECT statement. 
+Syntax: 
+SELECT column_name [, column_name ] 
+FROM   table1 [, table2 ] WHERE  column_name OPERATOR 
+(SELECT column_name [, column_name ] FROM table1 [, table2 ] [WHERE]) 
+ 
+2. Sub-Query with Insert Statement: 
+Subqueries also can be used with INSERT statements. The INSERT statement uses the data returned from the subquery to insert into another table. The selected data in the subquery can be modified with any of the character, date or number functions. 
+Syntax: INSERT INTO table_name [ (column1 [, column2 ]) ]  
+ SELECT [ *|column1 [, column2 ] 
+   FROM table1 [, table2 ] [ WHERE VALUE OPERATOR ] 
+ 
+3. Sub-Query with Update Statement: 
+The subquery can be used in conjunction with the UPDATE statement. Either single or multiple columns in a table can be updated when using a subquery with the UPDATE statement. 
+Syntax: UPDATE table SET column_name = new_value [ WHERE OPERATOR [ VALUE ] (SELECT 
+COLUMN_NAME FROM TABLE_NAME) [ WHERE)] 
+4. Sub-Query with Delete Statement: 
+The subquery can be used in conjunction with the DELETE statement like with any other statements mentioned above. 
+Syntax: DELETE FROM TABLE_NAME [ WHERE OPERATOR [ VALUE ] (SELECT 
+COLUMN_NAME    FROM TABLE_NAME)    [ WHERE) ] 
+Test Cases:   
+T_ID T_NAME 
+ CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Full Join using Union 
+all SQL query  can be written as <<left join query>>  union all 
+<<right join query>> Result set is equivalent to actual full join query Pass T_P2 Getting 
+NULL values  in left 	outer 
+join      The SQL LEFT JOIN returns all rows from the left table, even if there are no matches in the right table and put NULL values for those unmatched 
+attributes NULL 	values obtained 	for unmatched attributes in right relation in join Pass Conclusion:  
+Outcome of the experiment is students are able to 
+1. Implement all types of Joins 
+2. Implement Subqueries with Select, Insert, Update and Delete statement 
+ 
+FAQS: 
+Q.1. What is the difference between cross joins, natural joins and self-join?  
+Q.2. What do you understand by a nested query? When is it used?  
+Q.3. Can you modify the rows in a table based on values from another table? 
+Q.4 How many tables may be included with a join? 
+A. One B. Two C. Three D. All of the mentioned 
+Q. 5 Mention various set membership operators 
+ 
+OUTPUT: Soft Copy of the program with output. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+GROUP: B 
+ASSIGNMENT NO: 5 
+Aim : To study unnamed PL/ SQL code blocks by using Control structure and Exception handling. 
+Problem Statement:  Write a PL/ SQL block of code for the following requirements:- Schema: 
+1. Borrower(Rollin, Name, DateofIssue, NameofBook, Status) 
+2. Fine(Roll_no,Date,Amt) 
+ Accept roll_no & name of book from user. 
+Check the number of days (from date of issue), if days are between 15 to 30 then fine amount will be Rs 5per day.If no. of days>30, per day fine will be Rs 50 per day & for days less than 30, Rs. 5 per day.After submitting the book, status will change from I to R. If the condition of fine is true, then details will be stored into a fine table. 
+
+create database assignment5;
+use assignment5;
+
+CREATE TABLE Borrower (
+    Rollin INT PRIMARY KEY,
+    Name VARCHAR(100),
+    DateofIssue DATE,
+    NameofBook VARCHAR(100),
+    Status CHAR(1)
+    );
+
+CREATE TABLE Fine (
+    Roll_no INT,
+    Date DATE,
+    Amt DECIMAL(10, 2),
+    FOREIGN KEY (Roll_no) REFERENCES Borrower(Rollin)
+);
+
+INSERT INTO Borrower (Rollin, Name, DateofIssue, NameofBook, Status) VALUES
+(101, 'Rushi', '2024-08-01', 'Deep Learning', 'I'),
+(102, 'Bob', '2024-08-05', 'Database Management', 'I'),
+(103, 'Yash', '2024-07-20', 'PL/SQL Programming', 'I'),
+(104, 'Dravid', '2024-08-10', 'Data Structures', 'I'),
+(105, 'Om', '2024-07-15', 'Operating Systems', 'I'),
+(106, 'Rohit', '2024-07-25', 'Networking Basics', 'I'),
+(107, 'Sachin', '2024-07-30', 'Artificial Intelligence', 'I'),
+(108, 'Virat', '2024-08-12', 'Machine Learning', 'I'),
+(109, 'Hardik', '2024-08-15', 'Computer Architecture', 'I'),
+(110, 'Jack', '2024-07-10', 'Cybersecurity Essentials', 'I');
+
+select * from Borrower;
+DELIMITER $$
+
+CREATE PROCEDURE CalculateFine(
+    IN p_roll_no INT,
+    IN p_name_of_book VARCHAR(100)
+)
+BEGIN
+    DECLARE v_days INT;
+    DECLARE v_fine DECIMAL(10, 2);
+    DECLARE v_issue_date DATE;
+    DECLARE v_status CHAR(1);
+
+    SELECT DateofIssue, Status INTO v_issue_date, v_status
+    FROM Borrower
+    WHERE Rollin = p_roll_no AND NameofBook = p_name_of_book;
+
+    SET v_days = DATEDIFF(CURDATE(), v_issue_date);
+
+    IF v_days BETWEEN 15 AND 30 THEN
+        SET v_fine = v_days * 5;
+    ELSEIF v_days > 30 THEN
+        SET v_fine = v_days * 50;
+    ELSE
+        SET v_fine = 0;
+    END IF;
+    
+    IF v_status = 'I' THEN
+        UPDATE Borrower
+        SET Status = 'R'
+        WHERE Rollin = p_roll_no AND NameofBook = p_name_of_book;
+    END IF;
+
+    IF v_fine > 0 THEN
+        INSERT INTO Fine (Roll_no, Date, Amt)
+        VALUES (p_roll_no, CURDATE(), v_fine);
+    END IF;
+END$$
+DELIMITER ;
+
+CALL CalculateFine(101, 'Deep Learning');
+CALL CalculateFine(104, 'Data Structures');
+CALL CalculateFine(108, 'Machine Learning');
+
+select * from Fine;
++---------+------------+--------+
+| Roll_no | Date       | Amt    |
++---------+------------+--------+
+|     101 | 2024-08-25 | 120.00 |
+|     104 | 2024-08-25 |  75.00 |
++---------+------------+--------+
+select * from Borrower;
++--------+--------+-------------+--------------------------+--------+
+| Rollin | Name   | DateofIssue | NameofBook               | Status |
++--------+--------+-------------+--------------------------+--------+
+|    101 | Rushi  | 2024-08-01  | Deep Learning            | R      |
+|    102 | Bob    | 2024-08-05  | Database Management      | I      |
+|    103 | Yash   | 2024-07-20  | PL/SQL Programming       | I      |
+|    104 | Dravid | 2024-08-10  | Data Structures          | R      |
+|    105 | Om     | 2024-07-15  | Operating Systems        | I      |
+|    106 | Rohit  | 2024-07-25  | Networking Basics        | I      |
+|    107 | Sachin | 2024-07-30  | Artificial Intelligence  | I      |
+|    108 | Virat  | 2024-08-12  | Machine Learning         | R      |
+|    109 | Hardik | 2024-08-15  | Computer Architecture    | I      |
+|    110 | Jack   | 2024-07-10  | Cybersecurity Essentials | I      |
++--------+--------+-------------+--------------------------+--------+
+
+
+PREREQUISITE: Knowledge of Basic SQL DDL, DML commands.  
+Course Objectives: 
+  	  	  	 
+1. To develop Database programming skills  	 
+2. To develop basic Database administration skills 
+3. To  understand and execute process of software application development 
+Course Outcomes:  
+Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 
+ 
+Theory: 
+Introduction to PL/SQL: 
+ PL/ SQL is a combination of SQL along with the procedural features of programming languages. It was developed by Oracle Corporation in the early 90's to enhance the capabilities of  SQL. PL/ SQL is one of three key programming languages embedded in the Oracle Database, along with SQL itself and Java. 
+Features of PL/SQL 
+Q. PL/SQL is tightly integrated with SQL. 
+R. It offers extensive error checking. 
+S. It offers numerous data types. 
+T. It offers a variety of programming structures. 
+U. It supports structured programming through functions and procedures. 
+V. It supports object-oriented programming. 
+W. It supports the development of web applications and server pages. 
+ A Simple PL/SQL Block:PL/SQL Block consists of three sections:  The Declaration section (optional). 
+1. The Execution section (mandatory). 
+2. The Exception Handling (or Error) section (optional). 
+ Declaration Section: 
+The Declaration section of a PL/SQL Block starts with the reserved keyword DECLARE. This section is optional and is used to declare any placeholders like variables, constants, records and cursors, which are used to manipulate data in the execution section. Placeholders may be any of Variables, Constants and Records, which stores data temporarily. Cursors are also declared in this section. 
+ Execution Section: 
+The Execution section of a PL/SQL Block starts with the reserved keyword BEGIN and ends with END. This is a mandatory section and is the section where the program logic is written to perform any task. The programmatic constructs like loops, conditional statements and SQL statements form the part of the execution section.  Exception Section: 
+The Exception section of a PL/SQL Block starts with the reserved keyword EXCEPTION. This section is optional. Any errors in the program can be handled in this section, so that the PL/SQL Blocks terminates gracefully. If the PL/SQL Block contains exceptions that cannot be handled, the Block terminates abruptly with errors. 
+The following table lists few of the exceptions - 
+Exception Oracle Error SQL CODE Description ACCESS_INTO_NUL
+L 06530 -6530 It is raised when a null object is automatically assigned a value. CASE_NOT_FOUND 06592 -6592 It is raised when none of the choices in the WHEN clause of a CASE statement is selected, and there is no ELSE clause. COLLECTION_IS_NU LL 06531 -6531 It is raised when a program attempts to apply collection methods other than EXISTS to an uninitialized nested table or varray, or the program attempts to assign values to the elements of an uninitialized nested table or varray. INVALID_NUMBER 01722 -1722 It is raised when the conversion of a character string into a number fails because the string does not represent a valid number. LOGIN_DENIED 01017 -1017 It is raised when a program attempts to log on to the database with an invalid username or password. NO_DATA_FOUND 01403 +100 It is raised when a SELECT INTO statement returns no rows. NOT_LOGGED_ON 01012 -1012 It is raised when a database call is issued without being connected to the database. PROGRAM_ERROR 06501 -6501 It is raised when PL/SQL has an internal problem. STORAGE_ERROR 06500 -6500 It is raised when PL/SQL ran out of memory or memory was corrupted. TOO_MANY_ROWS 01422 -1422 It is raised when a SELECT INTO statement returns more than one row. VALUE_ERROR 06502 -6502 It is raised when an arithmetic, conversion, truncation, or size constraint error occurs. ZERO_DIVIDE 01476 1476 It is raised when an attempt Every statement in the below three sections must end with a semicolon ; . PL/SQL blocks can be nested within other PL/SQL blocks. Comments can be used to document code. 
+DECLARE 
+   <declarations section> 
+BEGIN 
+   <executable command(s)> 
+EXCEPTION 
+   <exception handling> 
+END; 
+Control Structure 
+Decision-making structures require that the programmer specify one or more conditions to be evaluated or tested by the program, along with a statement or statements to be executed if the condition is determined to be true, and optionally, other statements to be executed if the condition is determined to be false.Following is the general form of a typical conditional (i.e., decision making) structure found in most of the programming languages - 
+A loop statement allows us to execute a statement or group of statements multiple times and following is the general form of a loop statement in most of the programming languages Sample PL/SQL Block: 
+DECLARE 
+   x NUMBER := 100; 
+BEGIN 
+   FOR i IN 1..10 LOOP 
+      IF MOD(i,2) = 0 THEN     -- i is even 
+         INSERT INTO temp VALUES (i, x, 'i is even');       ELSE 
+         INSERT INTO temp VALUES (i, x, 'i is odd'); 
+      END IF;       x := x + 100; 
+   END LOOP; 
+   COMMIT; 
+END;/ 
+  
+ 
+ 
+ 
+ 
+Test Cases: 
+T_ID T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Calculate Fine Fine of Rs.5 per day if days between 15 to 30 Total Fine displayed  Pass T_P2 Exception NO_DATA_FOUND No rows selected Pass T_P3 Calculate Fine Fine of Rs.5 per day if days <15  Fine to be displayed  Fail  
+Conclusion:  
+Outcome of the experiment is: 
+1. Ability to execute PL/SQL blocks. 
+2. Ability to write control structures, loop and exception handling 
+ 
+FAQS: 
+a Explain Importance of the PL/SQL language? 
+b List various schema objects that can be created using PL/SQL? 
+c Say True or False. Justify PL/SQL does not have data types or variables. 
+Q4. What is wrong in the following assignment statement? 
+Acc_balance =Acc_balance *0.20; 
+Q 5. How to make use of %type data type? Explain with example. Q.6.  Define Exception Handling in PL/SQL? list any three. 
+ 
+OUTPUT: Soft Copy of the program with output. 
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+ 
+ 
+
+
+GROUP: B 
+ASSIGNMENT NO: 6 
+Aim : To study Cursors: (All types: Implicit, Explicit, Cursor FOR Loop, Parameterized Cursor) 
+Problem Statement:  Write a PL/SQL block of code using parameterized Cursor, that will merge the data available in the newly created table N_RollCall with the data available in the table O_Roll-call. If the data in the first table already exists in the second table then that data should be skipped. 
+
+create database assignment6;
+use assignment6;
+
+CREATE TABLE N_RollCall (
+    roll_no Number PRIMARY KEY,
+    name VARCHAR2(100),
+    
+);
+
+CREATE TABLE O_RollCall (
+    roll_no Number PRIMARY KEY,
+    name VARCHAR2(100),
+    PRIMARY KEY (roll_no)
+);
+
+INSERT INTO N_RollCall (roll_no, name) VALUES (1, 'joshi'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (2, 'Joy'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (3, 'vansh'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (4, 'Boby');
+
+INSERT INTO O_RollCall (roll_no, name) VALUES (2, 'Joy'),
+INSERT INTO O_RollCall (roll_no, name) (4, 'Bob'),
+INSERT INTO O_RollCall (roll_no, name) (5,'Amit');
+
+select * from N_RollCall;
+
+select * from O_RollCall;
+
+DECLARE
+     v_roll_no  O_RollCall.roll_no%TYPE;
+     v_name O_RollCall.name%TYPE;
+    
+     CURSOR c1 IS 
+         SELECT roll_no, name 
+         FROM O_RollCall
+         WHERE roll_no NOT IN (SELECT roll_no FROM N_RollCall);
+
+ BEGIN
+    OPEN c1;
+
+    LOOP
+         FETCH c1 INTO v_roll_no, v_name;
+        
+         EXIT WHEN c1%NOTFOUND;
+
+         INSERT INTO N_RollCall(roll_no, name) VALUES (v_roll_no, v_name);
+        
+     END LOOP;
+
+     
+     CLOSE c1;
+ END;
+select * from N_RollCall;
++---------+-------+
+| roll_no | name  |
++---------+-------+
+|       1 | joshi |
+|       2 | Joy   |
+|       3 | vansh  |
+|       4 | Boby   |
+|       5 | Amit  |
++---------+-------+
+
+PREREQUISITE:Knowledge of PL/SQL block  Course Objectives: 
+  	  	  	 
+Q. To develop Database programming skills  	 
+R. To develop basic Database administration skills 
+S. To  understand and execute process of software application development 
+Course Outcomes:  
+ Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 
+ 
+Theory: 
+A cursor is a pointer to the context area. PL/SQL controls the context area through a cursor. A cursor holds the rows (one or more) returned by a SQL statement. The set of rows the cursor holds is referred to as the active set.You can name a cursor so that it could be referred to in a program to fetch and process the rows returned by the SQL statement, one at a time. There are two types of cursors Implicit cursors, Explicit cursors 
+Implicit Cursors : 
+Implicit cursors are automatically created by Oracle whenever an SQL statement is executed, when there is no explicit cursor for the statement. Programmers cannot control the implicit cursors and the information in it.Whenever a DML statement (INSERT, UPDATE and DELETE) is issued, an implicit cursor is associated with this statement. 
+The following table provides the description of the most used attributes -
+ 
+ 
+Sr. No Attribute & Description 1 %FOUND :Returns TRUE if an INSERT, UPDATE, or DELETE statement affected one or more rows or a SELECT INTO statement returned one or more rows. Otherwise, it returns FALSE. 2 %NOTFOUND: The logical opposite of %FOUND. It returns TRUE if an INSERT, UPDATE, or DELETE statement affected no rows, or a SELECT INTO statement returned no rows. Otherwise, it returns FALSE 3 %ISOPEN: Always returns FALSE for implicit cursors, because Oracle closes the SQL cursor automatically after executing its associated SQL statement. 4 %ROWCOUNT: Returns the number of rows affected by an INSERT, UPDATE, or DELETE statement, or returned by a SELECT INTO statement.  
+Example of Implicit Cursor: 
+DECLARE   
+   total_rows number(2); 
+BEGIN 
+   UPDATE customers 
+   SET salary = salary + 500; IF sql%notfound THEN 
+      dbms_output.put_line('no customers selected'); ELSE IF sql%found THEN 
+      total_rows := sql%rowcount; 
+      dbms_output.put_line( total_rows || ' customers selected '); 
+END IF;   
+END;/ 
+ 
+Explicit Cursors 
+Explicit cursors are programmer-defined cursors for gaining more control over the context area. An explicit cursor should be defined in the declaration section of the PL/SQL Block. It is created on a SELECT Statement which returns more than one row. 
+Working with an explicit cursor includes the following steps - 
+1.Declaring the cursor for initializing the memory 
+ 2.Opening the cursor for allocating the memory 
+ 3.Fetching the cursor for retrieving the data 
+ 4.Closing the cursor to release the allocated memory 
+ 
+Declaring the Cursor 
+Declaring the cursor defines the cursor with a name and the associated SELECT statement. For example - CURSOR c_customers IS SELECT id, name, address FROM customers; 
+Opening the Cursor 
+Opening the cursor allocates the memory for the cursor and makes it ready for fetching the rows returned by the SQL statement into it. For example, we will open the cursor as - OPEN c_customers; 
+Fetching the Cursor 
+Fetching the cursor involves accessing one row at a time. For example, fetch rows from the above-opened cursor as follows - 
+FETCH c_customers INTO c_id, c_name, c_addr; 
+ Closing the Cursor 
+Closing the cursor means releasing the allocated memory. For example, we will close the opened cursor as 
+-CLOSE c_customers; Example: DECLARE 
+   c_id customers.id%type;    c_name customerS.No.ame%type; 
+  CURSOR c_customers is 
+      SELECT id, name FROM customers; 
+BEGIN 
+   OPEN c_customers; 
+   LOOP 
+   FETCH c_customers into c_id, c_name, c_addr; 
+      EXIT WHEN c_customers%notfound; 
+      dbms_output.put_line(c_id || ' ' || c_name || ' ' || c_addr); 
+   END LOOP; 
+   CLOSE c_customers; END;/ 
+Test Cases: 
+T_I D T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Check 
+Mismatch of Record Compare Rollno !=RollNo Record inserted and displayed  Pass T_P2 Check matching of record  Check RollNo=RollNo  Tuple inserted in second table Fail Conclusion:  
+Outcome of experiment is students are able to  
+1. Implement implicit,explicit and parameterized cursors. 
+2. Execute cursors with various types of cursor attributes 
+ 
+FAQS: 
+a How To Execute the Cursor Queries with "OPEN" Statements? 
+b Explain use of cursor 
+c Write code of a cursor for loop. 
+d What is meant by % ROWTYPE and TYPE RECORD. 
+e Which is the default cursor in Pl/SQL 
+ 
+OUTPUT: Printout of program with output. 
+  
+ 
+ 
+  
+ 
+ 
+  
+ 
+ 
+ 
+GROUP: B 
+ASSIGNMENT NO: 7 
+Aim : PL/SQL Stored Procedure and Stored Function 
+Problem Statement:Write a Stored Procedure namely proc_Grade for the categorization of students. If marks scored by students in examination is <=1500 and marks>=990 then students will be placed in distinction category if marks scored are between 989 and900 category is first class, if marks 899 and 825 category is Higher Second Class. Write a PL/SQL block for using procedures created with the above requirement. Stud_Marks(name, total_marks) Result(Roll,Name, Class) 
+ 
+
+
+
+
+
+
+PREREQUISITES: 
+1. Basics of PL/SQL block 
+2. Knowledge of Basic SQL DDL, DML commands. Course Objectives: 
+  	  	  	 
+1. To develop Database programming skills  	 
+2. To develop basic Database administration skills 
+3. To  understand and execute process of software application development 
+Course Outcomes:  
+Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 
+ 
+Theory: 
+A subprogram is a program unit/module that performs a particular task. A subprogram can be created 1) At the schema level 2) Inside a package Inside a PL/SQL block 
+PL/SQL provides two kinds of subprograms - 
+Functions- These subprograms return a single value; mainly used to compute and return a value. 
+Procedures- These subprograms do not return a value directly; mainly used to perform an action.  Creating a Procedure: 
+A procedure is created with the CREATE OR REPLACE PROCEDURE statement. 
+CREATE [OR REPLACE] PROCEDURE procedure_name 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+{IS | AS} 
+BEGIN 
+  < procedure_body > 
+END procedure_name; 
+Where,w 
+procedure-name  specifies the name of the procedure. 
+[OR REPLACE] option allows the modification of an existing procedure. 
+   The optional parameter list contains name, mode and types of the parameters. IN represents the value that will be passed from outside and OUT represents the parameter that will be used to return a value outside of the procedure. 
+Procedure-body contains the executable part. 
+The AS keyword is used instead of the IS keyword for creating a standalone procedure. 
+ Executing a Standalone Procedure 
+A standalone procedure can be called in two ways - 
+1) Using the EXECUTE keyword 2) Calling the name of the procedure from a PL/SQL block  Deleting a Standalone Procedure 
+A standalone procedure is deleted with the DROP PROCEDURE statement. Syntax for deleting a procedure is - 
+DROP PROCEDURE procedure-name 
+The following table lists out the parameter modes in PL/SQL subprograms - 
+S.No Parameter Mode & Description 1 IN : An IN parameter lets you pass a value to the subprogram. It is a read-only parameter. Inside the subprogram, an IN parameter acts like a constant. It cannot be assigned a value. You can pass a constant, literal, initialized variable, or expression as an IN parameter. You can also initialize it to a default value; however, in that case, it is omitted from the subprogram call. It is the default mode of parameter passing. Parameters are passed by reference. 2 OUT: An OUT parameter returns a value to the calling program. Inside the subprogram, an OUT parameter acts like a variable. You can change its value and reference the value after assigning it. The actual parameter must be variable and it is passed by value. 3 IN OUT: An IN OUT parameter passes an initial value to a subprogram and returns an updated value to the caller. It can be assigned a value and the value can be read. The actual parameter corresponding to an IN OUT formal parameter must be a variable, not a constant or an expression. Formal parameter must be assigned a value. Actual parameter is passed by value.  
+A function is same as a procedure except that it returns a value. 
+ Creating a Function 
+A standalone function is created using the CREATE FUNCTION statement. The simplified syntax for the 
+CREATE OR REPLACE PROCEDURE statement is as follows - 
+CREATE [OR REPLACE] FUNCTION function_name 
+[(parameter_name [IN | OUT | IN OUT] type [, ...])] 
+RETURN return_datatype 
+{IS | AS} 
+BEGIN 
+   < function_body > 
+END [function_name]; 
+Where,function-name specifies the name of the function. 
+[OR REPLACE] option allows the modification of an existing function. 
+The function must contain a return statement. 
+The RETURN clause specifies the data type you are going to return from the function. 
+Function-body contains the executable part. 
+The AS keyword is used instead of the IS keyword for creating a standalone function. 
+Calling a Function 
+While creating a function, you give a definition of what the function has to do. To use a function, you will have to call that function to perform the defined task. When a program calls a function, the program control is transferred to the called function. A called function performs the defined task and when its return statement is executed or when the last end statement is reached, it returns the program control back to the main program. 
+Test Cases: 
+T_I D T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Check 
+Marks Compare Range of marks Record displayed  Pass T_P2 Exception If marks are below 600 and above 1500  Message displayed No Out of Bound Fail  
+Conclusion:  
+Outcome of the experiment is students are able to 1. 	Implement stored procedure and function. 
+2. 	Execute drop procedure. FAQS: 
+Q.1. What is the stored procedure? 
+Q. 2.What is difference between FUNCTION and PROCEDURE in PL/SQL 
+a What are the advantages of stored procedure? 
+b Write when to use stored procedures to complete SQL Server tasks. 
+c What packages are available to PL SQL developers? 
+ 
+OUTPUT: Printout of program with output. 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+GROUP: B 
+ASSIGNMENT NO: 8 
+Aim : To study Database Trigger (All Types: Row level and Statement level triggers, Before and After Triggers). 
+Problem Statement: Write a database trigger on Library table. The System should keep track of the records that are being updated or deleted. The old value of updated or deleted records should be added in Library Audit table. 
+PREREQUISITES: 
+1. Basics of PL/SQL block  
+2. Knowledge of Basic SQL DDL, DML commands.  Course Objectives: 
+  	  	  	 
+1. To develop Database programming skills  	 
+2. To develop basic Database administration skills 
+3. To  understand and execute process of software application development 
+Course Outcomes:  
+Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 
+
+
+ 
+
+ 
+Theory: 
+Triggers are stored programs, which are automatically executed or fired when some events occur. Triggers are, in fact, written to be executed in response to any of the following events - 
+       A database manipulation (DML) statement (DELETE, INSERT, or UPDATE) A database definition (DDL) statement (CREATE, ALTER, or DROP). 
+A database operation (SERVERERROR, LOGON, LOGOFF, STARTUP, or SHUTDOWN). 
+Triggers can be defined on the table, view, schema, or database with which the event is associated. 
+ Benefits of Triggers : 
+Generating some derived column values automatically 
+Enforcing referential integrity 
+Event logging and storing information on table access 
+Auditing 
+Synchronous replication of tables 
+Imposing security authorizations 
+   Preventing invalid transactions Creating a trigger: 
+CREATE[ORREPLACE]TRIGGERtrigger_name 
+{BEFORE|AFTER|INSTEADOF}{INSERT[OR]|UPDATE[OR]|DELETE} 
+[OF col_name]ON table_name [REFERENCING OLD AS o NEWASn] 
+[FOR EACHROW] WHEN(condition) 
+DECLARE 
+Declaration-statements 
+BEGIN 
+Executable-statements 
+EXCEPTION 
+       Exception-handling-statements 
+END; 
+Here, 
+a) CREATE [OR REPLACE] TRIGGER trigger_name: It creates or replaces an existing trigger with the trigger_name. 
+b) {BEFORE | AFTER | INSTEAD OF} : This specifies when the trigger would be executed. The INSTEAD OF clause is used for creating trigger on a view. 
+c) {INSERT [OR] | UPDATE [OR] | DELETE}: This specifies the DML operation. 
+d) [OF col_name]: This specifies the column name that would be updated. 
+e) [ON table_name]: This specifies the name of the table associated with the trigger. 
+f) [REFERENCING OLD AS o NEW AS n]: This allows you to refer new and old values for various DML statements, like INSERT, UPDATE, and DELETE. 
+g) [FOR EACH ROW]: This specifies a row level trigger, i.e., the trigger would be executed for each row being affected. Otherwise the trigger will execute just once when the SQL statement is executed, which is called a table level trigger. 
+h) WHEN (condition): This provides a condition for rows for which the trigger would fire. This clause is valid only for row level triggers. 
+Following are the two very important point and should be noted carefully. 
+OLD and NEW references are used for record level triggers these are not avialable for table level triggers.If you want to query the table in the same trigger, then you should use the AFTER keyword, because triggers can query the table or change it again only after the initial changes are applied and the table is back in a consistent state. Test Cases: 
+T_I D T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Update record Update record from library table Record Updated  Pass T_P2 Delete record Delete record from table  Trigger not fired Fail  
+Conclusion:  
+Outcome of the experiment is students are able to  
+1. 	Execute row level, statement level , Before and After Triggers. FAQS: 
+1. 1. How many types of triggers exist in PL/SQL? 
+Q.2. What is the difference between execution of triggers and stored procedures? 
+Q. 3. What happens when a trigger is associated with a view? 
+Q. 4. How would you reference column values BEFORE and AFTER you have inserted and deleted triggers? 
+Q . 5. How to disable a trigger name update_salary?  
+
+OUTPUT: Printout of program with output. 
+ 
+ 
+
+
+
+ 
+GROUP: C 
+ASSIGNMENT NO: 9 
+Aim : Implement MYSQL database connectivity with Java.Implement Database navigation operations (add, delete, edit,) using JDBC. 
+Problem Statement: 
+5. Create table Stud with ID, name, marks columns using Java- JDBC connectivity 
+6. Insert 5 records in Stud 
+7. Update marks to 50 for student with ID =3; 
+8. Delete record for student whose ID is 1; 
+9. Alter table stud for adding one new column dept 
+1. Alter table stud and modify the column dept 
+2. Alter tables stud and drop column dept 
+
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        String query1 = "create table Stud2 (ID int primary key, name varchar(30), marks int)";
+        String query2 = "insert into Stud2(ID, name, marks) values (1,'Rushi',80), (2,'Virat',65), (3,'Rohit',70), (4,'Dravid',60), (5,'Sachin',75)";
+        String query3 = "select * from Stud2";
+        String query4 = "update Stud2 set marks=50 where ID=3 ";
+        String query5 = "delete from Stud2 where ID=1";
+        String query6 = "alter table Stud2 add dept varchar(20)";
+        String query7 = "alter table Stud2 modify dept varchar(20) default 'CSE-AI'";
+        String query8 = "insert into Stud2(ID, name, marks) values (6,'Hardik',78) ";
+        String query9 = "alter table Stud2 drop dept";
+
+        try{
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/db1", "root", "Rushi@009");
+
+            Statement st = con.createStatement();
+
+            st.executeUpdate(query1);
+            System.out.println("Table created successfully.");
+
+            st.executeUpdate(query2);
+            System.out.println("Data added successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query4);
+            System.out.println("Data updated successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query5);
+            System.out.println("Data deleted successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query6);
+            System.out.println("dept added successfully.");
+
+            st.executeUpdate(query7);
+            System.out.println("dept modified successfully.");
+            showTableData(st,true);
+
+            st.executeUpdate(query8);
+            System.out.println("dept set to CSE-AI as default successfully.");
+            showTableData(st, true);
+
+            st.executeUpdate(query9);
+            System.out.println("dept dropped successfully.");
+            showTableData(st, false);
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void showTableData(Statement st, boolean dept) {
+        String query3 = "select * from Stud2";
+
+        try {
+            if(dept){
+                ResultSet rs = st.executeQuery(query3);
+                while (rs.next()) {
+                    System.out.println("ID: " + rs.getInt("ID") + ", Name: " + rs.getString("name") + ", Marks: " + rs.getInt("marks") + ", Dept: " + rs.getString("dept"));
+                }
+            }else{
+//                System.out.println("Updated data in Stud2:");
+                ResultSet rs = st.executeQuery(query3);
+                while (rs.next()) {
+                    System.out.println("ID: " + rs.getInt("ID") + ", Name: " + rs.getString("name") + ", Marks: " + rs.getInt("marks"));
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+
+    Table created successfully.
+
+Data added successfully.
+ID: 1, Name: Rushi, Marks: 80
+ID: 2, Name: Virat, Marks: 65
+ID: 3, Name: Rohit, Marks: 70
+ID: 4, Name: Dravid, Marks: 60
+ID: 5, Name: Sachin, Marks: 75
+
+Data updated successfully.
+ID: 1, Name: Rushi, Marks: 80
+ID: 2, Name: Virat, Marks: 65
+ID: 3, Name: Rohit, Marks: 50 
+ID: 4, Name: Dravid, Marks: 60
+ID: 5, Name: Sachin, Marks: 75
+
+
+Data deleted successfully.
+ID: 2, Name: Virat, Marks: 65
+ID: 3, Name: Rohit, Marks: 50 
+ID: 4, Name: Dravid, Marks: 60
+ID: 5, Name: Sachin, Marks: 75
+
+    dept added successfully.
+
+dept modified successfully.
+ID: 2, Name: Virat, Marks: 65, Dept: CSE-AI
+ID: 3, Name: Rohit, Marks: 50, Dept: CSE-AI
+ID: 4, Name: Dravid, Marks: 60, Dept: CSE-AI
+ID: 5, Name: Sachin, Marks: 75, Dept: CSE-AI
+
+dept dropped successfully.
+ID: 2, Name: Virat, Marks: 65
+ID: 3, Name: Rohit, Marks: 50 
+ID: 4, Name: Dravid, Marks: 60
+ID: 5, Name: Sachin, Marks: 75
+
+
+PREREQUISITE:Knowledge of basic java connectivity steps with MYSQL. 
+  	  	  	 
+Course Objectives: 
+3. To develop Database programming skills  	 
+4. To develop basic Database administration skills   
+5. To  understand and execute process of software application development 
+Course Outcome:  
+2. Design  ER model and convert ER diagram into database tables    
+3. Design  Schema with appropriate normal form and Implement SQL Queries   	for given requirements,Using different SQL Concepts 
+Theory: 
+Client -Data Server 
+The client-server model of computing is a distributed application structure that partitions tasks or workloads between the providers of a resource or service, called servers, and service requesters, called clients. Often clients and servers communicate over a computer network on separate hardware, but both client and server may reside in the same system. 
+The client-server characteristic describes the relationship of cooperating programs in an application. The server component provides a function or service to one or many clients, which initiate requests for such services. Servers are classified by the services they provide. For instance, a web server serves web pages and a file server serves computer files. 
+The two-tier architecture is like client server application. The direct communication takes place between client and server. There is no intermediate between client and server. 
+
+ 
+ 
+ 
+The above figure shows the architecture of two-tier. Here the communication is one to one. For example, now we have a need to save the employee details in database. The two tiers of two-tier architecture is Database (Data tier), Client Application (Client tier). So, in client application the client writes the program for saving the record in SQL Server and thereby saving the data in the database. 
+JDBC: 
+JDBC stands for Java Database Connectivity, which is a standard Java API for database-independent connectivity between the Java programming language and a wide range of databases. The JDBC library includes APIs for each of the tasks commonly associated with database usage: 
+Making a connection to a database,Creating SQL or MySQL statements,Executing that SQL or MySQL queries in the database,Viewing & Modifying the resulting records. 
+Fundamentally, JDBC is a specification that provides a complete set of interfaces that allows for portable access to an underlying database. Java can be used to write different types of executables, such as: Java Applications, Java Applets, Java Servlets, Java Server Pages (JSPs), Enterprise JavaBeans (EJBs). All of these different executables are able to use a JDBC driver to access a database and take advantage of the stored data. JDBC provides the same capabilities as ODBC, allowing Java programs to contain databaseindependent code. 
+What is JDBC Driver ? 
+JDBC drivers implement the defined interfaces in the JDBC API for interacting with your database server. For example, using JDBC drivers enable you to open database connections and to interact with it by sending SQL or database commands then receiving results with Java. 
+There are following six steps involved in building a JDBC application - 
+ Import the packages: Requires that you include the packages containing the JDBC classes needed for database programming. Most often, using import java.sql.* will suffice. import java.sql.*; 
+   Register the JDBC driver: Requires that you initialize a driver so you can open a communication channel with the database. 
+   Class.forName("com.mysql.jdbc.Driver"); 
+	Open a connection: Requires using the DriverManager.getConnection() method to create a   connection object, which represents a physical connection with the database. 
+      connection                                                                             
+ 	con=DriverManager.getConnection("jdbc:mysql://localhost:3306/test","root","admin");        Where root & admin are the credentials for DB and test is the required db to connect with.     
+ Execute a query: Requires using an object of type Statement for building and submitting an SQL statement to the database. 
+             Statement st=con.createStatement(); 
+             String sql="<sql query>";              st.executeUpdate(sql) // or st.executeQuery(sql)               if result set has to be generated.Extract data from result set:  
+ Resultset rs= st.executeQuery(sql) 
+While (rs.next()) 
+{ 
+//statement for printing the records as per the query } 
+ Clean up the environment: Requires explicitly closing all database resources versus relying on the JVM's garbage collection. 
+con.close(); Test Cases: 
+T_I D T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Connection Check JDBC connectivity with MYSQL Record Inserted Pass T_P2 Exception Class not found  Connected with DB Fail  
+Conclusion:  
+Outcome of the experiment is students are able to 1. 	Make connectivity with MYSQL using JDBC. 
+1. 	Create a database with a front end. 
+ 
+FAQS: 
+Q.1. Explain the role of the client in 3 tier architecture? 
+Q.2. What is the role of the business layer in DBMS architecture? 
+Q.3. Elaborate data layer of DBMS architecture? 
+1. 4. Differentiate between two tier and three tier architecture 
+Q.5. Summarize the concept of ODBC 
+ 
+OUTPUT: Soft Copy of the Queries with output. 
+		 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+  
+ 
+GROUP: C 
+ASSIGNMENT NO: 10 
+Aim : Design and Develop MongoDB Queries using CRUD operations. (Use CRUD operations, SAVE method, logical operators) 
+Problem Statement: 
+1. Create Collection Employee 
+
+db.createCollection("Employee")
+{ ok: 1 }
+
+2. Insert 5 documents to Employee 
+
+db.Employee.insertMany([ { name: "Sachin", age: 25, salary: 40000, department: "Programmer" },{ name: "Hardik", age: 28, salary: 60000, department: "Marketing" },{ name: "Virat", age: 30, salary: 45000, department: "HR" }, { name: "Rohit", age: 35, salary: 70000, department: "Finance" },{ name: "Dravid", age: 32, salary: 55000, department: "Sales" } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670359b44528fce0a6c73bf8'),
+    '1': ObjectId('670359b44528fce0a6c73bf9'),
+    '2': ObjectId('670359b44528fce0a6c73bfa'),
+    '3': ObjectId('670359b44528fce0a6c73bfb'),
+    '4': ObjectId('670359b44528fce0a6c73bfc')
+  }
+}
+
+3. Read all the documents 
+
+test> db.Employee.find()
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  }
+]
+
+4. Display all the documents in a formatted manner 
+
+test> db.Employee.find().pretty()
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  }
+]
+
+5. Insert another 3 documents with a single insert command 
+
+test> db.Employee.insertMany([{ name: "Yash", age: 27, salary: 48000, department: "HR" },{ name: "Jasprit", age: 31, salary: 62000, department: "Operations" },{ name: "Surya", age: 26, salary: 53000, department: "Finance" } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67035d684528fce0a6c73bfd'),
+    '1': ObjectId('67035d684528fce0a6c73bfe'),
+    '2': ObjectId('67035d684528fce0a6c73bff')
+  }
+}
+
+6. Insert one document using save() method instead of insert() method 
+
+test> db.Employee.insertOne({ name: "Joe", age: 25, salary: 52000, department: "Production" })
+{
+  acknowledged: true,
+  insertedId: ObjectId('6703605f4528fce0a6c73c00')
+}
+
+7. Read all the employees whose name is "Joe? and age is 25 
+
+db.Employee.find({ name: "Joe", age: 25 })
+[
+  {
+    _id: ObjectId('6703605f4528fce0a6c73c00'),
+    name: 'Joe',
+    age: 25,
+    salary: 52000,
+    department: 'Production'
+  }
+]
+
+8. Read all the employees whose salary is greater than 5000 
+
+test> db.Employee.find({ salary: { $gt: 5000 } })
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfe'),
+    name: 'Jasprit',
+    age: 31,
+    salary: 62000,
+    department: 'Operations'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('6703605f4528fce0a6c73c00'),
+    name: 'Joe',
+    age: 25,
+    salary: 52000,
+    department: 'Production'
+  }
+]
+
+9. Update the department of employee "Joe? from "Production? to "Operations? 
+
+test> db.Employee.updateOne({ name: "Joe", department: "Production" }, { $set: { department: "Operations" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+10. Increment the salary of "Joe? by Rs. 2000 
+
+test> db.Employee.updateOne({ name: "Joe" }, { $inc: { salary: 2000 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+11. Add email Id for "Joe? (using $AddToSet modifier with update) 
+
+test> db.Employee.updateOne({ name: "Joe" }, { $addToSet: { email: "joe@example.com" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+12. Remove all the documents for the employees belonging to "Operations? department 
+
+db.Employee.deleteMany({ department: "Operations" })
+{ acknowledged: true, deletedCount: 2 }
+
+13. Sort all the documents according to the name of employees 
+
+test> db.Employee.find().sort({ name: 1 })
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  }
+]
+
+14. Display only first three documents 
+
+   db.Employee.find().limit(3)
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  }
+]
+
+15. Display all the documents except first 4 
+
+db.Employee.find().skip(4)
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  }
+]
+
+16. Use all the administrative commands of MongoDB 
+
+test> db.stats()
+{
+  db: 'test',
+  collections: Long('1'),
+  views: Long('0'),
+  objects: Long('7'),
+  avgObjSize: 82.28571428571429,
+  dataSize: 576,
+  storageSize: 36864,
+  indexes: Long('1'),
+  indexSize: 36864,
+  totalSize: 73728,
+  scaleFactor: Long('1'),
+  fsUsedSize: 123984261120,
+  fsTotalSize: 394115674112,
+  ok: 1
+}
+
+db.getCollectionNames()
+[ 'Employee' ]
+
+db.Employee.drop()
+true
+
+PREREQUISITE: Knowledge of basic queries for CRUD operations in MongoDB 
+  	  	 
+Course Objectives: 
+1) To develop Database programming skills 
+2) To develop basic Database administration skills   
+3) To develop skills to handle NoSQL Database  	 
+4) To understand and execute process of software application development 
+Course Outcome:  
+1. 	Create  and Design NoSQL queries for given requirements to handle databases of varying complexities 
+Theory: 
+Inserting and Saving Documents : save() method: 
+Updates an existing document or inserts a new document, depending on its document parameter. 
+Modifiers to be used with Update Operation: 
+Usually only certain portions of a document need to be updated. You can update specific fields in a document using atomic update modifiers. Update modifiers are special keys that can be used to specify complex update operations, such as altering, adding, or removing keys, and even manipulating arrays and embedded documents. 
+$inc- To increment the value of a field 
+$set- Sets the value of a field 
+$unset- Unsets the value of a field 
+$push, $each, $slice- All are array modifiers and helps to push and select each element from the array 
+$AddToSet- Adding key value pairs to the existing array 
+Q Suppose we were keeping website analytics in a collection and wanted to increment a counter each time someone visited a page. We can use update modifiers to do this increment atomically. Each URL and its number of page views is stored in a document that looks like this: 
+{ 
+"_id" : ObjectId("4b253b067525f35f94b60a31"), 
+"url" : "www.example.com", 
+"pageviews" : 52 
+} 
+Every time someone visits a page, we can find the page by its URL and use the "$inc" modifier to increment the value of the "pageviews" key: 
+> db.analytics.update({"url" : "www.example.com"},{"$inc" : {"pageviews" : 1}}) 
+R If the user wanted to store his favorite book in his profile, he could add it using "$set" : 
+> db.users.update({"_id" : ObjectId("4b253b067525f35f94b60a31")},{"$set" : {"favorite book" : "War and 
+Peace"}}) 
+S "$set" can even change the type of the key it modifies. For instance, if our fickle user decides that he actually likes quite a few books, he can change the value of the "favorite book" key into an array: 
+> db.users.update({"name" : "joe"}, {"$set" : {"favorite book" : ["Cat's Cradle", "Foundation Trilogy", 
+"Ender's Game"]}}) 
+T If the user realizes that he actually doesn?t like reading, he can remove the key altogether with "$unset" > db.users.update({"name" : "joe"}, {"$unset" : {"favorite book" : 1}}) 
+U You can also use "$set" to reach in and change embedded documents: Eg: > db.blog.posts.findOne() 
+{ 
+"_id" : ObjectId("4b253b067525f35f94b60a31"), 
+"Aim" : "A Blog Post", 
+"content" : "...", 
+"author" : { 
+"name" : "joe", 
+"email" : "joe@example.com" 
+}} 
+> db.blog.posts.update({"author.name" : "joe"}, {"$set" : {"author.name" : "joe schmoe"}}) f) Updating multiple documents: 
+To update multiple documents, set the multi option to true. For example, the following operation updates all documents where stock is less than or equal to 10: 
+E.g.  db.books.update({ stock: { $lte: 10 } },{ $set: { reorder: true } },{ multi: true }) 
+Logical Operations with Queries 
+The find method is used to perform queries in MongoDB. Querying returns a subset of documents in a collection, from no documents at all to the entire collection. Which documents get returned is determined by the first argument to find , which is a document specifying the query criteria. When we start adding key/value pairs to the query document, we begin restricting our search. This works in a straightforward way for most types: numbers match numbers, booleans match booleans, and strings match strings. Querying for a simple type is as specifying the value that you are looking for. For example, to find all documents where the value for "age" is 27, we can add that key/value pair to the query document: 
+> db.users.find({"age" : 27}) 
+"$lt" , "$lte" , "$gt" , and "$gte" are all comparison operators, corresponding to <, <=, >, and >=, respectively. They can be combined to look for a range of values. For example, to look for users who are between the ages of 18 and 30, we can do this: 
+> db.users.find({"age" : {"$gte" : 18, "$lte" : 30}}) 
+This would find all documents where the " age " field was greater than or equal to 18 AND less than or equal to 30. 
+Test Cases:  
+T_ID T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) Update Document Writing a Query to update document T_P1 Document Updated Pass Returns all documents that match the conditions of both clauses. T_P2 
+ Logical operators Writing a query to use logical operator $and Pass T_P3 Save Method Writing collection name for which to save apply Record doesn't get updated Fail  
+Conclusion:  
+Outcome of the experiment is students are able to  1. 	Implement CRUD operations. 
+2. 	Implement Logical Operations with Queries FAQS: 
+Q.1. Justify with proper query,can we update multiple documents at once 
+Q.2. Explain Upsert? 
+Q.3. When are the batch inserts useful? 
+Q.4. What are the different administrative commands of MongoDB? 
+Q.5. What does mongoimport do? 
+ 
+OUTPUT: Soft Copy of the Queries with output. 
+ 
+ 
+ 
+ 
+ 
+
+
+
+GROUP: C 
+ASSIGNMENT NO: 11 
+Aim : Implement aggregation and indexing with suitable examples using MongoDB. 
+Problem Statement: 
+1 Create Collection Product 
+
+test> db.createCollection("Product")
+{ ok: 1 }
+
+2 Insert the documents by considering the keys name, company, cost 
+
+test> db.Product.insertMany([ { name: "Laptop", company: "Dell", cost: 50000 },{ name: "Smartphone", company: "Samsung", cost: 30000 },{ name: "Tablet", company: "Apple", cost: 45000 },{ name: "Smartwatch", company: "Apple", cost: 20000 },{ name: "Desktop", company: "Dell", cost: 60000 }])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670a75666d4c413fe8c73bf8'),
+    '1': ObjectId('670a75666d4c413fe8c73bf9'),
+    '2': ObjectId('670a75666d4c413fe8c73bfa'),
+    '3': ObjectId('670a75666d4c413fe8c73bfb'),
+    '4': ObjectId('670a75666d4c413fe8c73bfc')
+  }
+}
+
+3 Aggregate the documents in the collection by grouping company name and displaying minimum and maximum price of product for the same company 
+
+test> db.Product.aggregate([{$group: {_id: "$company",minPrice: { $min: "$cost" },maxPrice: { $max: "$cost" } }},{ $sort: { _id: 1 } }])
+[
+  { _id: 'Apple', minPrice: 20000, maxPrice: 45000 },
+  { _id: 'Dell', minPrice: 50000, maxPrice: 60000 },
+  { _id: 'Samsung', minPrice: 30000, maxPrice: 30000 }
+]
+
+4. Show the sorted result on the basis of company 
+
+test> db.Product.find().sort({ company: 1 })
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfa'),
+    name: 'Tablet',
+    company: 'Apple',
+    cost: 45000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfb'),
+    name: 'Smartwatch',
+    company: 'Apple',
+    cost: 20000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf8'),
+    name: 'Laptop',
+    company: 'Dell',
+    cost: 50000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfc'),
+    name: 'Desktop',
+    company: 'Dell',
+    cost: 60000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf9'),
+    name: 'Smartphone',
+    company: 'Samsung',
+    cost: 30000
+  }
+
+1 Display number of documents in the collection 
+
+test> db.Product.countDocuments()
+5
+
+2 Display distinct company names in the collection 
+
+test> db.Product.distinct("company")
+[ 'Apple', 'Dell', 'Samsung' ]
+
+3 Display company name with its count for documents 
+
+test> db.Product.aggregate([{ $group: { _id: "$company", count: { $sum: 1 } } }])
+[
+  { _id: 'Dell', count: 2 },
+  { _id: 'Samsung', count: 1 },
+  { _id: 'Apple', count: 2 }
+]
+
+4 Limit the result for one document only 
+
+test> db.Product.find().limit(1)
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf8'),
+    name: 'Laptop',
+    company: 'Dell',
+    cost: 50000
+  }
+]
+
+5 Limit the result by skipping first two documents 
+
+test> db.Product.find().skip(2)
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfa'),
+    name: 'Tablet',
+    company: 'Apple',
+    cost: 45000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfb'),
+    name: 'Smartwatch',
+    company: 'Apple',
+    cost: 20000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfc'),
+    name: 'Desktop',
+    company: 'Dell',
+    cost: 60000
+  }
+]
+
+6 Insert 10 documents by using for loop in the collection staff by considering keys Staff_id, staff_name, age 
+
+test> db.createCollection("staff")
+{ ok: 1 }
+test> let staffData = [];for (let i = 1; i <= 10; i++) {staffData.push({ Staff_id: i, staff_name: "Staff" + i, age: 20 + i });}db.staff.insertMany(staffData);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670a7c3c6d4c413fe8c73c07'),
+    '1': ObjectId('670a7c3c6d4c413fe8c73c08'),
+    '2': ObjectId('670a7c3c6d4c413fe8c73c09'),
+    '3': ObjectId('670a7c3c6d4c413fe8c73c0a'),
+    '4': ObjectId('670a7c3c6d4c413fe8c73c0b'),
+    '5': ObjectId('670a7c3c6d4c413fe8c73c0c'),
+    '6': ObjectId('670a7c3c6d4c413fe8c73c0d'),
+    '7': ObjectId('670a7c3c6d4c413fe8c73c0e'),
+    '8': ObjectId('670a7c3c6d4c413fe8c73c0f'),
+    '9': ObjectId('670a7c3c6d4c413fe8c73c10')
+  }
+}
+
+7 Find the document where Staff_id is 2 and explain different parameters for running the query. Observe the number of scanned objects, time in milliseconds, type of cursor etc. 
+
+test> db.staff.find({ Staff_id: 2 }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: { Staff_id: { '$eq': 2 } },
+    indexFilterSet: false,
+    queryHash: '1731B8FC',
+    planCacheKey: '6AD18E14',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 2,
+    executionTimeMillis: 6,
+    totalKeysExamined: 0,
+    totalDocsExamined: 20,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      nReturned: 2,
+      executionTimeMillisEstimate: 0,
+      works: 21,
+      advanced: 2,
+      needTime: 18,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 20
+    }
+  },
+  command: { find: 'staff', filter: { Staff_id: 2 }, '$db': 'test' },
+  serverInfo: {
+    host: 'Rushi-PC',
+    port: 27017,
+    version: '8.0.0',
+    gitVersion: 'd7cd03b239ac39a3c7d63f7145e91aca36f93db6'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+8 create index on staff_name 
+
+test> db.staff.createIndex({ staff_name: 1 })
+staff_name_1
+
+9 Run the query for point no 11 and observe the change in values for different parameters of the query 
+
+Comleted in point no 11
+
+10 Find the document of the staff where age is 40 and staff_name is "Karan?. Observe the index name used for running the query 
+
+test> db.staff.find({ age: 40, staff_name: "Karan" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: {
+      '$and': [ { age: { '$eq': 40 } }, { staff_name: { '$eq': 'Karan' } } ]
+    },
+    indexFilterSet: false,
+    queryHash: '0800CED6',
+    planCacheKey: '6D4D8E9F',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      filter: { age: { '$eq': 40 } },
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { staff_name: 1 },
+        indexName: 'staff_name_1',
+        isMultiKey: false,
+        multiKeyPaths: { staff_name: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { staff_name: [ '["Karan", "Karan"]' ] }
+      }
+    },
+    rejectedPlans: []
+  },
+11 create the index on age and Staff_name 
+
+test> db.staff.createIndex({ age: 1, staff_name: 1 })
+age_1_staff_name_1
+
+12 Run the query for point no. 14 and observe the index used for running the querying 
+
+Completed in point 14
+
+13 Drop the index created on age and Staff_name and run the query for point no. 14 again and observe the type of index 
+
+test> db.staff.dropIndex({ age: 1, staff_name: 1 })
+{ nIndexesWas: 3, ok: 1 }
+test> db.staff.find({ age: 40, staff_name: "Karan" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: {
+      '$and': [ { age: { '$eq': 40 } }, { staff_name: { '$eq': 'Karan' } } ]
+    },
+    indexFilterSet: false,
+    queryHash: '0800CED6',
+    planCacheKey: '6D4D8E9F',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      filter: { age: { '$eq': 40 } },
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { staff_name: 1 },
+        indexName: 'staff_name_1',
+        isMultiKey: false,
+        multiKeyPaths: { staff_name: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { staff_name: [ '["Karan", "Karan"]' ] }
+      }
+    },
+14 Drop the index created on Staff_name and run the query for pint no. 11 and observe the type of index
+
+test> db.staff.dropIndex({ staff_name: 1 })
+{ nIndexesWas: 2, ok: 1 }
+test> db.staff.find({ Staff_id: 2 }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: { Staff_id: { '$eq': 2 } },
+    indexFilterSet: false,
+    queryHash: '1731B8FC',
+    planCacheKey: '6AD18E14',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 2,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 20,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      nReturned: 2,
+      executionTimeMillisEstimate: 0,
+      works: 21,
+      advanced: 2,
+      needTime: 18,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 20
+    }
+  },
+  command: { find: 'staff', filter: { Staff_id: 2 }, '$db': 'test' },
+  serverInfo: {
+    host: 'Rushi-PC',
+    port: 27017,
+    version: '8.0.0',
+    gitVersion: 'd7cd03b239ac39a3c7d63f7145e91aca36f93db6'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+} 
+15 Create a unique index on Staff_name and try inserting documents with the duplicate Staff_names. Observe the result 
+
+test> db.staff.createIndex({ staff_name: 1 }, { unique: true })
+PREREQUISITE:Knowledge of basic queries for aggregation and indexing Course Objectives: 
+1. To develop Database programming skills 
+2. To develop basic Database administration skills   
+3. To develop skills to handle NoSQL Database  	 
+4. To understand and execute process of software application development 
+Course Outcome:  Create and Design NoSQL queries for given requirements to handle databases of varying complexities 
+Theory: 
+Aggregation 
+Aggregations are operations that process data records and return computed results. MongoDB provides a rich set of aggregation operations that examine and perform calculations on the data sets. Running data aggregation on the mongod instance simplifies application code and limits resource requirements. Like queries, aggregation operations in MongoDB use collections of documents as an input and return results in the form of one or more documents. Aggregation Pipeline 
+The aggregation pipeline is a framework for data aggregation modeled on the concept of data processing pipelines. Documents enter a multi-stage pipeline that transforms the documents into aggregated results. The MongoDB aggregation pipeline starts with the documents of a collection and streams the documents from one pipeline operator to the next to process the documents. Each operator in the pipeline transforms the documents as they pass through the pipeline. Pipeline operators do not need to produce one output document for every input document. Operators may generate new documents or filter out documents. Pipeline operators can be repeated in the pipeline. The db.collection.aggregate() method returns a cursor and can return result sets of any size. Pipeline operators appear in an array. Documents pass through the operators in a sequence. 1. $project: 
+It reshapes a document stream. $project can rename, add, or remove fields as well as create computed values and sub-documents. 
+> db.articles.aggregate({"$project" : {"author" : 1, "_id" : 0}}) 
+By default, "_id" is always returned if it exists in the incoming document 2. $match: 
+Filters the document stream, and only allows matching documents to pass into the next pipeline stage. $match uses standard MongoDB queries.$match filters documents so that you can run an aggregation on a subset of documents. For example, if you only want to find out stats about users in Oregon, you might add a "$match" expression such as {$match : {"state" : "OR"}}. "$match" can use all of the usual query operators ("$gt", "$lt", "$in", etc.). Generally, good practice is to put "$match" expressions as early as possible in the pipeline. This has two benefits: it allows you to filter out unneeded documents quickly and the query can use indexes if it is run before any projections or groupings. 
+1. $limit: Restricts the number of documents in an aggregation pipeline. 
+2. $Skip: Skips over a specified number of documents from the pipeline and returns the rest. 
+3. $unwind: Takes an array of documents and returns them as a stream of documents. Unwinding turns each field of an array into a separate document. 
+4. $group: 
+Groups documents together for the purpose of calculating aggregate values based on a collection of documents. The output of $group depends on how you define groups. Begin by specifying an identifier (i.e. 
+an _id field) for the group you?re creating with this pipeline. For this _id field, you can specify various expressions, including a single field from the documents in the pipeline, a computed value from a previous stage, a document that consists of multiple fields, and other valid expressions, such as constant or sub document fields. You can use $project operators in expressions for the _id field. 
+The following example of an _id field specifies a document that consists of multiple fields: { $group: { _id : { author: '$author', pageViews: '$pageViews', posted: '$posted' } } } 7. $sort: 
+Takes all input documents and returns them in a stream of sorted documents. It is highly recommended that you do the sort at the beginning of the pipeline and have an index it can use. Otherwise, the sort may be slow and take a lot of memory. You can use both existing fields and projected fields in a sort. 
+Expression Operators: 
+Expression operators calculate values within the Pipeline Operators. 
+1.$group operators: we have so many operators used for grouping. $addToSet, min,$max,$first,$last, $avg,$push,$sum are few of them. 
+? Boolean operators: $and,$or,$not 
+? Comparision Operators: $cmp,$eq,$gt,$gte,$lt,$lte,$ne 
+? Arithmetic operators: $add,$divide,$mod,$multiply,$subtract 
+? String operators: $concat,$strcasecmp,$substr,$toLower,$toUpper 
+? Array operators: $size 
+? Conditional Expressions: $cond, $ifNull 
+8.Date operators: 
+$dayOfYear,$dayOfMonth,$dayOfWeek,$year,$month,$week,$hour,$minute,$second,$millisecond Pipeline operators & Indexes: 
+The $match and $sort pipeline operators can take advantage of an index when they occur at the beginning of the pipeline. 
+If your aggregation operation requires only a subset of the data in a collection, use the $match, $limit, and $skip stages to restrict the documents that enter at the beginning of the pipeline. When placed at the beginning of a pipeline, $match operations use suitable indexes to scan only the matching documents in a collection. Placing a $match pipeline stage followed by a $sort stage at the start of the pipeline is logically equivalent to a single query with a sort and can use an index. When possible, place $match operators at the beginning of the pipeline. 
+Test Cases: 
+T_ID T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Aggregation Writing a query to display number of documents in collection. By using count() number of documents in collection are 
+displayed Pass T_P2 Indexing Writing query for creating index on documents. Index Created Pass T_P3 Duplicate Entry Try to insert same record without creating unique index  Record inserted Fail Conclusion:  
+Outcome of the experiment is students are able to 1. 	Implement aggregation and indexing with MongoDB. 
+2. 	Implement pipeline operators. FAQS: 
+Q.1. What is dropDups parameter used while creating index? 
+Q.2. Explain use of $first and $last? 
+Q.3. Make use of pipeline operators such as $push & $pop in aggregation operation with an example? 
+Q.4. Define an aggregation operation? 
+Q.5. What is the purpose of $unwind 
+ 
+OUTPUT: Soft Copy of the Queries with output. 
+ 
+
+
+
+ 
+GROUP: C 
+ASSIGNMENT NO: 12 
+Aim : Implement Map Reduce operation with suitable example using MongoDB. 
+Problem Statement: 
+1. Create collection Staff with keys name, age and address 
+2. Apply Map Reduce operation over Staff collection to display the name of staff and sum of ages of the staff having same name. 
+
+
+PREREQUISITE:Knowledge of basic queries for creating functions for map & reduce Course Objectives: 
+* To develop Database programming skills 
+* To develop basic Database administration skills   
+* To develop skills to handle NoSQL Database  	 
+* To understand and execute process of software application development 
+Course Outcome: Create and Design NoSQL queries for given requirements to handle databases of varying complexities 
+Theory: 
+Map-Reduce: 
+Map-reduce is a data processing paradigm for condensing large volumes of data into useful aggregated results. For map-reduce operations, MongoDB provides the map Reduce database command. All map-reduce functions in MongoDB are JavaScript and run within the mongod process. Map-reduce operations take the documents of a single collection as the input and can perform any arbitrary sorting and limiting before beginning the map stage. Map Reduce can return the results of a map-reduce operation as a document, or may write the results to collections. The input and the output collections may be sharded. 
+In MongoDB, map-reduce operations use custom JavaScript functions to map, or associate, values to a key. If a key has multiple values mapped to it, the operation reduces the values for the key to a single object. The use of custom JavaScript functions provides flexibility to map-reduce operations. For instance, when processing a document, the map function can create more than one key and value mapping or no mapping. Map-reduce operations can also use a custom JavaScript function to make final modifications to the results at the end of the map and reduce operation, such as perform additional calculations. 
+Map Reduce is a powerful and flexible tool for aggregating data. It can solve some problems that are too complex to express using the aggregation framework?s query language. 
+Map Reduce uses JavaScript as its "query language" so it can express arbitrarily complex logic. However, this power comes at a price: Map Reduce tends to be fairly slow and should not be used for real-time data analysis. Map Reduce can be easily parallelized across multiple servers. It splits up a problem, sends chunks of it to different machines, and lets each machine solve its part of the problem. When all the machines are finished, they merge all the pieces of the solution back into a full solution. Map Reduce has a couple of steps. It starts with the map step, which maps an operation onto every document in a collection. That operation could be either "do nothing" or "emit these keys with X values." There is then an intermediary stage called the shuffle step: keys are grouped and lists of emitted values are created for each key. The reduce takes this list of values and reduces it to a single element. This element is returned to the shuffle step until each key has a list containing a single value: the result. 
+ Map-Reduce Behaviour: 
+In MongoDB, the map-reduce operation can write results to a collection or return the results inline. If you write map-reduce output to a collection, you can perform subsequent map-reduce operations on the same input collection that merge replace, merge, or reduce new results with previous results. When returning the results of a map reduce operation inline, the result documents must be within the BSON Document Size limit, which is currently 16 megabytes. For additional information on limits and restrictions on map-reduce operations, see the mapReduce reference page. 
+MongoDB supports map-reduce operations on sharded collections. Map-reduce operations can also output the results to a sharded collection. 
+Map Reduce Example: 
+In the mongo shell, the db.collection.mapReduce() method is a wrapper around the mapReduce command. The following examples use the db.collection.mapReduce() method: 
+Consider the following map-reduce operations on a collection orders that contains documents of the following prototype: 
+{ 
+     _id: ObjectId("50a8240b927d5d8b5891743c"),      cust_id: "abc123", 
+     ord_date: new Date("Oct 04, 2012"),      status: 'A',      price: 25,      items: [ { sku: "mmm", qty: 5, price: 2.5 }, 
+              { sku: "nnn", qty: 5, price: 2.5 } ] 
+} 
+To Return the Total Price per customer: 
+Perform the map-reduce operation on the orders collection to group by the cust_id, and calculate the sum of the price for each cust_id: 
+* Define the map function to process each input document 
+In the function, this refers to the document that the map-reduce operation is processing. 
+The function maps the price to the cust_id for each document and emits the cust_id and price pair. 
+                  var mapFunction1 = function() {  
+                       emit(this.cust_id, this.price); 
+                                            }; 
+* Define the corresponding reduce function with two arguments keyCustId and valuesPrices: 
+The valuesPrices is an array whose elements are the price values emitted by the map function and grouped by keyCustId. 
+The function reduces the valuesPrice array to the sum of its elements.                   var reduceFunction1 = function(keyCustId, valuesPrices) 
+                  { 
+                        return Array.sum(valuesPrices); 
+                  }; 
+* Perform the map-reduce on all documents in the orders collection using the mapFunction1 map function and the reduceFunction1 reduce function. 
+   >db.orders.mapReduce(mapFunction1,reduceFunction1,{out: "map_reduce_example" }) 
+This operation outputs the results to a collection named map_reduce_example. If the map_reduce_example collection already exists, the operation will replace the contents with the results of this map-reduce operation. 
+We can also use "finalize? to perform the aggregation on map reduced result. 
+Test Cases:  
+T_ID T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Map Reduce Using Map Reduce operations for collection to display sum. Sum Displayed Pass T_P2 Without emit  Perform Map Reduce without emitting values Map Reduce can not be performed Fail  
+Conclusion:  
+Outcome of the experiment is students are able to  1. 	Implement Map Reduce Operation with MongoDB. 
+FAQS: 
+o Justify, Are the map & reduce functions developed in JavaScript? 
+o Summarize that Map Reduce works upon aggregation principles of MongoDB? 
+o Explain Map Reduce? 
+o Mention the function  used to perform the map reduce operation? 
+o Does MongoDB supports map-reduce operations on sharded collections? 
+ 
+OUTPUT: Soft Copy of the Queries with output. 
+ 
+  
+ 
+		 
+  
+ 
+ 
+ 
+
+ 
+ 
+ 
+  
+ 
+GROUP: C 
+  
+Aim : Write a program to implement MongoDB database connectivity with Java. Implement Database navigation operations (add, delete, edit etc. ) using JDBC. 
+PROBLEM STATEMENT:Implement connectivity with MongoDB using any Java application. 
+PREREQUISITE:Knowledge of basic java connectivity steps with MongoDB. 
+	                                                      
+Theory: 
+Before we start using MongoDB in our Java programs, we need to make sure that we have MongoDB JDBC Driver and Java set up on the machine. Now, let us check how to set up MongoDB JDBC driver. You need to download the jar from the path Download mongo.jar. Make sure to download latest release of it. You need to include the mongo.jar into your classpath. 
+   Connect to database 
+To connect database, you need to specify database name, if database doesn't exist then mongodb creates it automatically. Code snippets to connect to database would be as follows: 
+ 
+import com.mongodb.*; public class MongoDBJDBC{ 
+   public static void main( String args[] ){       try{    
+ 	 // To connect to mongodb server 
+         MongoClient mongoClient = new MongoClient( "localhost" , 27017 ); 
+         // Now connect to your databases 
+         DB db = mongoClient.getDB( "test" ); 
+ 	 System.out.println("Connect to database successfully");          boolean auth = db.authenticate(myUserName, myPassword);  	 System.out.println("Authentication: "+auth); 
+      }catch(Exception e){ CSE_AI 
+     System.err.println( e.getClass().getName() + ": " + e.getMessage() ); 
+  } 
+   } 
+} 
+Now, compile and run above program to create our database test. You can change your path as per your requirement. We are assuming current version of JDBC driver mongo-2.10.1.jar is available in the current path. To create a collection, createCollection() method of com.mongodb.DB class is used.To get/select a collection from the database, getCollection() method of com.mongodb.DBCollection class is used. To insert a document into mongodb, insert() method of com.mongodb.DBCollection class is used. To select all documents from the collection, find() method of com.mongodb.DBCollection class is used. This method returns a cursor, so you need to iterate this cursor. To update document from the collection, update() method of com.mongodb.DBCollection class is used. To delete first document from the collection, you need to first select the documents using findOne() method and then remove method of com.mongodb.DBCollection class. Test Cases: 
+T_I D T_NAME CONDITION TO TEST ACTUAL RESULT STATUS 
+(PASS/FAIL) T_P1 Connection Check JDBC connectivity with MongoDB Record Inserted Pass T_P2 Exception Class not found  Connected with DB Fail  
+Conclusion:  
+Outcome of the experiment is students are able to  1. 	Make connectivity with MongoDB using JDBC. 
+2. 	Create a database with a front end. 
+ 
+FAQS: 
+Q.1. Which method is used to delete the document? 
+Q.2. Which method is used to insert the document? 
+Q.3.  Write port no of JDBC for making database connectivity of NoSQL 
+Q.4.  List the alternatives to MongoDB.  
+Q.5.  Mention what is Object_ld composed of? 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+GROUP: C 
+Aim : To implement mini project  
+PROBLEM STATEMENT: Using the database concepts covered in SQL and NoSQL, develop an software application : 
+ 
+PREREQUISITES:Knowledge of basic queries of SQL/Oracle and NoSQL Course Objectives: 
+o To develop Database programming skills 
+o To develop basic Database administration skills 
+o To develop skills to handle NoSQL Database 
+o To  understand and execute process of software application development 
+ 
+Course Outcome: 
+   o Design ER model and convert ER diagram into database tables 
+   o Design Schema with appropriate normal form and Implement SQL Queries  for given requirements,Using different SQL Concepts 
+   o Implement PL/SQL Block  for given requirements,Using different PL SQL Concepts 
+   o Create and Design NoSQL queries for given requirements to handle  databases of varying complexities 
+Instructions:  
+1. Follow the same problem statement decided in Assignment -1 of Group A. 
+2. Follow the Software Development Life cycle and other concepts learnt in Software Engineering Course throughout the implementation. 
+3. Develop application considering: 
+Front End : Java/Perl/PHP/Python/Ruby/.net/any other language 
+             Backend : MongoDB/MySQL/Oracle 
+4. Test and validate application using Manual/Automation testing. 
+5. Student should develop application in group of 2-3 students and submit the Project Report which will consist of documentation related to different phases of Software Development 
+Life Cycle: Report writing format 
+Title of the Project, Abstract, Introduction 
+Software Requirement Specification 
+Conceptual Design using ER features, Relational Model in appropriate Normalize form 
+Graphical User Interface, Source Code 
+Testing document Conclusion. 
+ 
+
+
+SkillSwap
+Connecting Talented Individuals for Collaborative Project Success
+NAMEPRNRoll NoNIRAJ PATIL22310030281003ATHARVA JAIN22310539281022VIRAJ JADHAV22310322281019
+
+Guided by: Pradnya Mehta Ma'am
+       
+Abstract:
+The SkillSwap Skills Matching Management System addresses a critical challenge faced by individuals who are eager to participate in projects but lack the right teammates, and by those who wish to join ongoing projects but have limited information or access. This project offers a seamless platform where team leaders can find teammates based on their specific skills, while interested individuals can discover and join projects that align with their expertise and interests. Through a user-friendly interface, SkillSwap facilitates effective collaboration by enabling notifications for project invitations, team updates, and hackathon alerts, ensuring that communication between leaders and participants is streamlined. The system also incorporates a profile management feature where users can showcase their personal and professional details, including skills, previous projects, and education history. By providing a centralized dashboard, SkillSwap empowers users to browse projects, connect with like-minded individuals, and contribute to meaningful collaborations, all in one place. The goal of the platform is to create an inclusive and effective environment for team formation and project success.
+
+Introduction:
+In today's competitive and fast-paced world, collaboration is essential for innovation and success. However, many individuals, particularly students and professionals, often find themselves eager to work on projects but struggle to assemble a team that complements their skill sets. Similarly, others may want to join existing projects but lack the information or networks to connect with the right teams. This disconnect leads to missed opportunities for collaboration and hampers productivity in various fields.
+The platform focuses on three key aspects: team formation, skill matching, and effective communication through notifications. Team leaders can easily browse through profiles of potential teammates and invite them to join projects based on the required skills. Likewise, individuals interested in joining projects can browse available opportunities and request to participate, ensuring a more inclusive and efficient team-building process.
+SkillSwap also incorporates features such as hackathon updates managed by administrators, allowing users to stay informed about upcoming events and challenges. The inclusion of detailed user profiles, showcasing professional and personal information, further enhances the experience by helping leaders and participants make informed decisions about team formation. All these functionalities are accessible through a single-window dashboard, making the platform intuitive and easy to navigate.
+The introduction of SkillSwap aims to solve real-world problems by bridging the gap between people with project ideas and those with the skills needed to bring these ideas to life. By fostering collaboration and simplifying the process of connecting the right individuals, SkillSwap promotes successful project execution and provides users with the tools they need to achieve their goals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+Software Requirement Specification:
+Hardware Requirements:
+* Laptop/PC: A system with a minimum of 4GB RAM is required to ensure smooth functioning of the development environment and web server.
+* Processor: An Intel i5 processor or equivalent is recommended to handle server-side processes efficiently.
+Software Requirements:
+ Front-End Technologies: The system uses HTML, CSS, JavaScript and bootstrap for building an interactive and user-friendly interface.  
+
+ Back-End Technologies: The back-end is developed using PHP, which handles server-side operations like user authentication, content management, and database interaction.
+ Database: The project uses MySQL, a relational database, to store and manage user data, content, comments, likes, and bookmarks.
+
+ Web Server: The system runs on Apache, which can be installed through development packages like XAMPP or WAMP.
+ Development Environment: Visual Studio Code or Sublime Text is recommended for coding and managing the project files.
+Functional Requirements:
+ User Registration and Authentication: Secure registration and login system for students and tutors.
+ Content Management: Tutors can upload, update, and manage educational content.
+ Interaction Features: Users can comment on, like, and bookmark content.
+
+Conceptual Design Using ER Diagram:
+The SkillSwap Skills Matching Management System is designed around several key entities that facilitate user interactions and project collaborations. Below is an overview of the main entities, their attributes, and the relationships between them:
+ User Basic Info
+ Attributes:
+ user_id: Unique identifier for each user (Primary Key).
+ first_name: User's first name.
+ last_name: User's last name.
+ username: Unique username for the user.
+ bio: A short biography or description of the user.
+ birthdate: User's date of birth.
+ mobile: User's mobile phone number.
+ email: User's email address.
+ User Authentication
+ Attributes:
+ user_id: Unique identifier for each user (Primary Key, Foreign Key referencing User Basic Info).
+ email: User's email address used for login.
+ password: Hashed password for user authentication.
+ sign_up_date: Date when the user registered on the platform.
+ User Previous Projects
+ Attributes:
+ id: Unique identifier for each project entry (Primary Key).
+ user_id: Unique identifier for the user who worked on the project (Foreign Key referencing User Basic Info).
+ project_name: Name of the project.
+ project_description: Brief description of the project.
+ User Education
+ Attributes:
+ education_id: Unique identifier for each education entry (Primary Key).
+ user_id: Unique identifier for the user (Foreign Key referencing User Basic Info).
+ education_level: Level of education (e.g., Bachelor's, Master's).
+ college: Name of the college or university attended.
+ city: City where the college is located.
+ country: Country where the college is located.
+ experience_years: Number of years of work experience related to the education.
+ Projects
+ Attributes:
+ project_id: Unique identifier for each project (Primary Key).
+ project_name: Name of the project.
+ project_description: Detailed description of the project.
+ project_category: Category or type of the project (e.g., Web Development, AI).
+ skills_required: List of skills needed to join the project.
+ end_date: Deadline for project completion.
+ leader_id: Unique identifier of the user leading the project (Foreign Key referencing User Basic Info).
+ Notifications
+ Attributes:
+ notification_id: Unique identifier for each notification (Primary Key).
+ user_id: Unique identifier for the user receiving the notification (Foreign Key referencing User Basic Info).
+ sender_id: Unique identifier for the user sending the notification (Foreign Key referencing User Basic Info).
+ type: Type of notification (e.g., "join_team", "team_invitation").
+ message: Content of the notification message.
+ is_read: Flag indicating whether the notification has been read (0 for unread, 1 for read).
+ created_at: Timestamp for when the notification was created.
+ project_id: Unique identifier for the associated project (Foreign Key referencing Projects).
+    7. Skills
+ Attributes:
+ skill_id: Unique identifier for each skill entry (Primary Key).
+ user_id: Unique identifier for the user associated with the skill (Foreign Key referencing User Basic Info).
+ proficiency: The level of expertise the user has in the skill (e.g., Beginner, Intermediate, Advanced).
+ skill: The specific skill the user possesses (e.g., Python, Java, Data Analysis).
+
+
+
+Relationships Between Entities
+ User and Authentication: The user_basic_info table is linked with the user_auth table via the user_id. Each user has one authentication record (1-to-1 relationship).
+ User and Skills: Each user can have multiple skills listed in the user_skills table, forming a 1-to-many relationship. The user_id in the user_skills table is a foreign key pointing to the user_basic_info table.
+ User and Education: The user_education table captures the education details of each user. A 1-to-many relationship exists between the user_basic_info and user_education tables.
+ User and Previous Projects: A user can have multiple previous projects listed in the users_prevproj table. This establishes another 1-to-many relationship with the user_basic_info table.
+ User and Projects: The projects table is linked to the user as a project leader via the leader_id. This is a 1-to-many relationship, meaning one user can lead multiple projects.
+ Project and Notifications: The notifications table tracks all the notifications related to project activities, with a many-to-many relationship between users and projects through notifications.
+ 
+
+ 
+ER DIAGRAM:
+
+					          ER Diagram    Fig 6.1
+
+Features of SkillSwap :
+ User Registration and Authentication
+ Description: Users can sign up for the platform using their email and password. The system securely stores user credentials and manages authentication to ensure that only registered users can access their profiles and system features.
+ User Profiles
+ Description: Each user has a dedicated profile where they can provide personal and professional details, including:
+ Benefit: This helps users showcase their expertise and facilitates better matching for project teams.
+ Browse Projects
+ Description: Users can explore available projects based on categories, skills required, and end dates. Each project displays relevant details, including project name, description, category, and leader information.
+ Benefit: This feature allows users to find projects that match their interests and skills easily.
+ Find Teammates by Skills
+ Description: Users can search for potential teammates based on specific skills. They can filter results to find users with complementary skills for their projects.
+ Benefit: This enhances collaboration by allowing users to assemble teams with diverse skill sets.
+ Notifications
+ Description: The notification system alerts users to important updates, such as:
+ Invitations to join projects
+ Acceptance of join requests
+ Project updates from admins
+ Benefit: Users stay informed about relevant activities and can respond promptly to invitations or changes.
+ Hackathon Updates
+ Description: Admins can post updates related to upcoming hackathons, including deadlines, requirements, and registration information.
+ Benefit: This keeps users engaged with the broader tech community and encourages participation in events.
+ Single-Window Dashboard
+ Description: Users access all features through a unified dashboard, simplifying navigation and improving user experience.
+ Benefit: This organized layout helps users find what they need quickly without unnecessary complexity.
+ Search and Filter Options
+ Description: Users can utilize advanced search and filtering options to narrow down projects or teammates based on specific criteria (skills, project categories, experience, etc.).
+ Benefit: Enhances user experience by making it easier to find relevant opportunities and connections.
+ Relational Model in Appropriate Normalized Form:
+	The database for the SkillSwap Skills Matching Management System has been meticulously structured and normalized to Third Normal Form (3NF). This ensures minimal redundancy and enhanced data integrity across various components of the system. Below are the main tables along with their attributes and explanations of how each table adheres to the principles of 3NF.
+ User Basic Information (user_basic_info)
+ Attributes: user_id (PK), first_name, last_name, username, bio, birthdate, mobile, email
+ 3NF Compliance: This table encapsulates all essential user information. Each attribute is atomic, ensuring there are no composite attributes. The user_id serves as the primary key, uniquely identifying each user, with all other attributes being fully functionally dependent on this key.
+ User Authentication (user_auth)
+ Attributes: user_id (PK, FK), email, password, sign_up_date
+ 3NF Compliance: This table maintains user authentication details, where user_id acts as both a primary key and a foreign key linked to user_basic_info. All attributes are dependent solely on the primary key, with no transitive dependencies present.
+ User Previous Projects (users_prevproj)
+ Attributes: id (PK), user_id (FK), project_name, project_description
+ 3NF Compliance: The primary key id ensures uniqueness, while each non-key attribute depends solely on this key. The foreign key user_id maintains relationships with user_basic_info, avoiding redundancy and maintaining 3NF compliance.
+ User Education (user_education)
+ Attributes: education_id (PK), user_id (FK), education_level, college, city, country, experience_years
+ 3NF Compliance: Each attribute in this table is functionally dependent on the primary key education_id. The foreign key user_id links the educational records to the respective users, fulfilling the requirements of 3NF without introducing transitive dependencies.
+ Projects (projects)
+ Attributes: project_id (PK), project_name, project_description, project_category, skills_required, end_date, leader_id (FK)
+ 3NF Compliance: The primary key project_id ensures uniqueness, and all non-key attributes depend solely on this key. The foreign key leader_id maintains a relationship with the user_auth table, ensuring that each project is linked to a specific user while adhering to 3NF principles.
+ Notifications (notifications)
+ Attributes: notification_id (PK), user_id (FK), sender_id (FK), type, message, is_read, created_at, project_id (FK)
+ 3NF Compliance: The primary key notification_id serves as a unique identifier for notifications. Each notification is directly linked to the users involved (both recipient and sender) and the related project. The structure maintains dependency on the primary key without any transitive relationships, thus fulfilling the requirements of 3NF.
+By normalizing the database to 3NF, the SkillSwap Skills Matching Management System effectively manages user interactions while minimizing redundancy. Each table is designed to maintain data integrity and ensure that relationships among users, projects, and notifications are logically structured. This systematic approach enhances performance and facilitates seamless data retrieval and updates.
+
+Graphical User Interface (GUI)
+Landing Page:
+ 
+					Opening page  Fig 8.1
+
+Home page:
+
+					Home page  Fig 8.2
+Profile Page:
+
+					Profile page  Fig 8.3
+
+
+Browse project page:
+
+					Browse project page  Fig 8.4
+Find teammates by skills:
+
+					Opening page  Fig 8.5
+Hackathon Updates Page:
+
+				Hackathon Updates Page Fig 8.6
+Notifications:
+
+				Notifications Page Fig 8.7
+
+
+
+Source Code:
+CREATE DATBASE skills_swap;
+USE skills_swap;
+-- Create user_basic_info table
+CREATE TABLE user_basic_info (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    username VARCHAR(50) NOT NULL UNIQUE,
+    bio TEXT,
+    birthdate DATE,
+    mobile VARCHAR(15),
+    email VARCHAR(100) NOT NULL UNIQUE
+);
+
+-- Create user_auth table
+CREATE TABLE user_auth (
+    user_id INT PRIMARY KEY,
+    email VARCHAR(100) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+    sign_up_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES user_basic_info(user_id) ON DELETE CASCADE
+);
+
+-- Create users_prevproj table
+CREATE TABLE users_prevproj (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    project_name VARCHAR(100) NOT NULL,
+    project_description TEXT,
+    FOREIGN KEY (user_id) REFERENCES user_basic_info(user_id) ON DELETE CASCADE
+);
+
+-- Create user_education table
+CREATE TABLE user_education (
+    education_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    education_level VARCHAR(50),
+    college VARCHAR(100),
+    city VARCHAR(50),
+    country VARCHAR(50),
+    experience_years INT,
+    FOREIGN KEY (user_id) REFERENCES user_basic_info(user_id) ON DELETE CASCADE
+);
+
+-- Create projects table
+CREATE TABLE projects (
+    project_id INT AUTO_INCREMENT PRIMARY KEY,
+    project_name VARCHAR(100) NOT NULL,
+    project_description TEXT,
+    project_category VARCHAR(50),
+    skills_required TEXT,
+    end_date DATE,
+    leader_id INT,
+    FOREIGN KEY (leader_id) REFERENCES user_auth(user_id) ON DELETE SET NULL
+);
+
+-- Create notifications table
+CREATE TABLE notifications (
+    notification_id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    sender_id INT,
+    type ENUM('join_team', 'team_invitation', 'other') NOT NULL,
+    message TEXT,
+    is_read TINYINT DEFAULT 0,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    project_id INT,
+    FOREIGN KEY (user_id) REFERENCES user_basic_info(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (sender_id) REFERENCES user_basic_info(user_id) ON DELETE CASCADE,
+    FOREIGN KEY (project_id) REFERENCES projects(project_id) ON DELETE SET NULL
+);
+
+
+
+Testing Documents:
+Test Case 1: User Registration
+
+				Registration Page Fig 10.1
+Test Case 2: User Login
+
+				Login Page Fig 10.2
+Test Case 3: Profile Update
+
+				      Profile Page Fig 10.3
+Test Case 4: Project Browsing
+Uploaded Image in GUI Section
+
+Conclusion:
+The SkillSwap Skills Matching Management System effectively addresses the challenges faced by individuals seeking collaborative opportunities in project environments. By creating a platform that connects project leaders with potential team members based on skills and interests, SkillSwap empowers users to form well-rounded teams and engage in meaningful projects.
+The system's architecture adheres to best practices in database normalization, enhancing data integrity and minimizing redundancy. The relational model effectively manages user interactions, ensuring that relationships among users, projects, and notifications are logically structured and efficiently maintained.
+In summary, SkillSwap is poised to become a vital tool for individuals looking to collaborate on projects, streamline their teamwork efforts, and enhance their overall productivity. As the platform evolves, there are opportunities for further enhancements, such as integrating advanced matching algorithms and expanding user engagement features, which could provide even greater value to its users. The successful implementation of this system demonstrates the potential for technology to facilitate meaningful connections and collaborative success in various fields.
+
+
+                                                                                                
+ 	 DBMS Lab Manual                                                 SY CSE-AI, Sem-I, 2024-25 
+
+                                                                                                
+ 	 DBMS Lab Manual                                                 SY CSE-AI, Sem-I, 2024-25 
+
+CSE_AI 
+. 	 2 
+
+CSE_AI 
+. 	 2 
+
+
+
+
+
+                                                                                                
+ 	 DBMS Lab Manual                                                 SY CSE-AI, Sem-I, 2024-25 
+
+                                                                                                
+ 	 DBMS Lab Manual                                                 SY CSE-AI, Sem-I, 2024-25 
+
+CSE_AI 
+. 	 2 
+
+CSE_AI 
+. 	 2 
+
+                                                                                                
+ 	 DBMS Lab Manual                                                 SY CSE-AI, Sem-I, 2024-25 
+
+. 	 50 
+
