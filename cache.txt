@@ -1,0 +1,1405 @@
+--------------------ass:2----------------------------------------------------------
+
+1.	Create table Customers with schema (cust_id, cust_name, product, quantity, total_price)
+
+mysql> create table Customers(cust_id int auto_increment primary key, cust_name varchar(100), product varchar(100), quantity int, total_price int);
+ 
+
+2.	Use sequence/ auto-increment for incrementing customer ID and Insert 5 customer records to the table Customers 
+
+mysql> insert into Customers(cust_name, product, quantity, total_price) values('Rushi', 'laptop', 1, 10000),('Rahul', 'mobile', 2, 20000),('om', 'tablet', 4, 50000),('Yash', 'headphone', 3, 2500),('Virat', 'bat', 2, 3000);
+ 
+3.	Alter the table Customers by adding one column „price_per_qnty‟ 
+
+mysql> alter table Customers add column price_per_qnty int;
+ 
+ 
+
+
+4.	Create view „Cust_View‟ on Customers displaying customer ID, customer name
+
+mysql> create view cust_view as select cust_id, cust_name from Customers;
+ 
+mysql> select * from cust_view;
+ )
+ 
+5.	Update the view „Cust_View‟ to display customer ID, product, total price 
+
+6.	Drop the view „Cust_View‟ 
+
+mysql> drop view cust_view;
+ 
+7.	Create index „Cust_index‟ on customer name 
+
+mysql> create index cust_index on Customers (cust_name);
+ 
+8.	Drop index „Cust_index‟ 
+
+mysql> drop index cust_index on Customers;
+ 
+
+9.	Use sequence/ auto-increment for incrementing customer ID 
+
+Done while creating the table with auto_increment
+
+10.	Use the name alias for table Customers (rename the table in query) 
+
+mysql> select * from Customers as cust2;
+ 
+11.	Drop the table Customers 
+
+drop table Customers;
+ 
+----------------------------------------------------------------------------------------
+
+---------------------ass:3--------------------------------------------------------------
+
+1. Create table Student with schema (roll_no, name, division, branch, city, marks)
+Query:
+CREATE TABLE Student (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(255),
+    division CHAR(2),
+    branch VARCHAR(50),
+    city VARCHAR(50),
+    marks DECIMAL(5, 2)
+);
+ 
+
+2. Insert 10 records to the table students
+Query:
+INSERT INTO Student (roll_no, name, division, branch, city, marks)
+VALUES
+     (1, 'Anit', 'A', 'CS', 'Pune', 85.5),
+    (2, 'Arjun', 'B', 'MECH', 'Mumbai', 70.0),
+    (3, 'Chaitanya', 'A', 'AIDS', 'Pune', 84.0),
+    (4, 'Gajendra', 'BE', 'CIVIL', 'Mumbai', 90.0),
+    (5, 'Sarthak', 'A', 'ELECTRICAL', 'Pune', 60.0),
+    (6, 'Vardhan', 'B', 'AI', 'Mumbai', 76.0),
+    (7, 'OM', 'A', 'AIML', 'Pune', 72.0),
+    (8, 'Vyankatesh', 'BE', 'ENTC', 'Mumbai', 58.0),
+    (9, 'Atharva', 'A', 'IOT', 'Pune', 94.0),
+ (10, 'Shardul', 'B', 'IT', 'Mumbai', 62.5);
+ 
+
+3. List all the student names with their corresponding city
+Query: SELECT name, city FROM Student; 
+ 
+
+4. List all the distinct names of the students
+Query:
+SELECT DISTINCT name FROM Student;
+ 
+5. List all the records of the students with all the attributes
+Query:
+SELECT* FROM Student; 
+
+6. List all the students whose marks are greater than 75
+Query:
+SELECT * FROM Student WHERE marks > 75;
+ 
+7. List all the students whose name starts with the alphabet „S‟
+Query:
+SELECT * FROM Student WHERE name LIKE 'S%';
+ 
+8. List all the students whose marks are in the range of 50 to 60
+Query:
+SELECT * FROM Student WHERE marks BETWEEN 50 AND 60;
+ 
+9. List all the students whose branch is „computer‟ and city is „Pune‟
+Query:
+SELECT * FROM Student WHERE branch = 'CS' AND city = 'Pune';
+ 
+10. Update the branch of a student to „IT‟ whose roll number is 9
+Query:
+UPDATE Student SET branch = 'IT' WHERE roll_no = 9;
+ 
+11. Delete the student records whose division is „BE‟
+Query:
+DELETE FROM Student WHERE division = 'BE';
+
+12. Create another table TE_Students with Schema( roll_no, name)
+Query:
+CREATE TABLE TE_Students (
+    roll_no INT PRIMARY KEY,
+    name VARCHAR(255)
+);
+ 
+13. List all the roll numbers unionly in the relations Student and TE_Students
+Query:
+SELECT roll_no FROM Student
+UNION
+SELECT roll_no FROM TE_Students;
+ 
+14. Display name of all the students belonging to relation Student in Upper case
+Query:
+SELECT UPPER(name) AS uppercase_name FROM Student;
+ 
+
+15. Display the binary and hex equivalent of marks for all the students belonging to Student relation
+Query:
+SELECT name, marks,
+       CAST(marks AS BINARY) AS binary_marks,
+       CAST(marks AS CHAR) AS hex_marks
+FROM Student;
+ 
+-------------------------------------------------------------------------------------
+-----------------------------------ass:4---------------------------------------------
+
+ Create the Customers Table:
+
+1. Create the Customers Table:
+
+CREATE TABLE Customers (
+    ID INT PRIMARY KEY,
+    name VARCHAR(100),
+    age INT,
+    address VARCHAR(200),
+    salary DECIMAL(10, 2)
+);
+2. Create the Orders Table:
+
+CREATE TABLE Orders (
+    O_ID INT PRIMARY KEY,
+    o_date DATE,
+    customer_id INT,
+    amount DECIMAL(10, 2),
+    FOREIGN KEY (customer_id) REFERENCES Customers(ID)
+);
+3. Insert Records into Tables:
+Insert records into Customers:
+
+INSERT INTO Customers (ID, name, age, address, salary) VALUES
+(1, 'John Doe', 28, 'New York', 35000),
+(2, 'Jane Smith', 24, 'Los Angeles', 45000),
+(3, 'Michael Brown', 22, 'Chicago', 30000),
+(4, 'Emily Davis', 27, 'New York', 40000),
+(5, 'David Wilson', 26, 'Houston', 25000);
+Insert records into Orders:
+
+INSERT INTO Orders (O_ID, o_date, customer_id, amount) VALUES
+(101, '2024-11-01', 1, 1500),
+(102, '2024-11-05', 2, 2000),
+(103, '2024-11-08', 1, 2500),
+(104, '2024-11-10', 4, 3000),
+(105, '2024-11-15', 6, 1800); -- Customer ID 6 does not exist in Customers
+4. Perform INNER JOIN:
+
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+INNER JOIN Orders
+ON Customers.ID = Orders.customer_id;
+5. Perform LEFT OUTER JOIN:
+
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+LEFT JOIN Orders
+ON Customers.ID = Orders.customer_id;
+6. Perform RIGHT OUTER JOIN:
+
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+RIGHT JOIN Orders
+ON Customers.ID = Orders.customer_id;
+7. Perform FULL OUTER JOIN using UNION ALL:
+
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+LEFT JOIN Orders
+ON Customers.ID = Orders.customer_id
+UNION ALL
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+RIGHT JOIN Orders
+ON Customers.ID = Orders.customer_id;
+8. Perform SELF JOIN:
+
+SELECT A.ID AS Customer1_ID, B.ID AS Customer2_ID, A.name AS Customer1_Name, B.name AS Customer2_Name
+FROM Customers A, Customers B
+WHERE A.address = B.address AND A.ID != B.ID;
+9. Perform CROSS JOIN:
+
+SELECT Customers.ID, Customers.name, Orders.amount, Orders.o_date
+FROM Customers
+CROSS JOIN Orders;
+10. Subquery to Display Customers with Salary > 20000:
+
+SELECT * FROM Customers
+WHERE salary > 20000;
+11. Create a Backup Table:
+
+CREATE TABLE cust_bkp AS
+SELECT * FROM Customers;
+12. Update Salaries by 10% for Customers Aged ≥ 24:
+
+UPDATE Customers
+SET salary = salary * 1.10
+WHERE ID IN (
+    SELECT ID FROM cust_bkp WHERE age >= 24
+);
+13. Delete Customers Aged > 26:
+
+DELETE FROM Customers
+WHERE ID IN (
+    SELECT ID FROM cust_bkp WHERE age > 26
+);
+----------------------------------------------------------------------------------------
+-------------------ass:5-----------------------
+
+create database assignment5;
+use assignment5;
+
+CREATE TABLE Borrower (
+    Rollin INT PRIMARY KEY,
+    Name VARCHAR(100),
+    DateofIssue DATE,
+    NameofBook VARCHAR(100),
+    Status CHAR(1)
+    );
+
+CREATE TABLE Fine (
+    Roll_no INT,
+    Date DATE,
+    Amt DECIMAL(10, 2),
+    FOREIGN KEY (Roll_no) REFERENCES Borrower(Rollin)
+);
+
+INSERT INTO Borrower (Rollin, Name, DateofIssue, NameofBook, Status) VALUES
+(101, 'Rushi', '2024-08-01', 'Deep Learning', 'I'),
+(102, 'Bob', '2024-08-05', 'Database Management', 'I'),
+(103, 'Yash', '2024-07-20', 'PL/SQL Programming', 'I'),
+(104, 'Dravid', '2024-08-10', 'Data Structures', 'I'),
+(105, 'Om', '2024-07-15', 'Operating Systems', 'I'),
+(106, 'Rohit', '2024-07-25', 'Networking Basics', 'I'),
+(107, 'Sachin', '2024-07-30', 'Artificial Intelligence', 'I'),
+(108, 'Virat', '2024-08-12', 'Machine Learning', 'I'),
+(109, 'Hardik', '2024-08-15', 'Computer Architecture', 'I'),
+(110, 'Jack', '2024-07-10', 'Cybersecurity Essentials', 'I');
+
+select * from Borrower;
+DELIMITER $$
+
+CREATE PROCEDURE CalculateFine(
+    IN p_roll_no INT,
+    IN p_name_of_book VARCHAR(100)
+)
+BEGIN
+    DECLARE v_days INT;
+    DECLARE v_fine DECIMAL(10, 2);
+    DECLARE v_issue_date DATE;
+    DECLARE v_status CHAR(1);
+
+    SELECT DateofIssue, Status INTO v_issue_date, v_status
+    FROM Borrower
+    WHERE Rollin = p_roll_no AND NameofBook = p_name_of_book;
+
+    SET v_days = DATEDIFF(CURDATE(), v_issue_date);
+
+    IF v_days BETWEEN 15 AND 30 THEN
+        SET v_fine = v_days * 5;
+    ELSEIF v_days > 30 THEN
+        SET v_fine = v_days * 50;
+    ELSE
+        SET v_fine = 0;
+    END IF;
+    
+    IF v_status = 'I' THEN
+        UPDATE Borrower
+        SET Status = 'R'
+        WHERE Rollin = p_roll_no AND NameofBook = p_name_of_book;
+    END IF;
+
+    IF v_fine > 0 THEN
+        INSERT INTO Fine (Roll_no, Date, Amt)
+        VALUES (p_roll_no, CURDATE(), v_fine);
+    END IF;
+END$$
+DELIMITER ;
+
+CALL CalculateFine(101, 'Deep Learning');
+CALL CalculateFine(104, 'Data Structures');
+CALL CalculateFine(108, 'Machine Learning');
+
+select * from Fine;
++---------+------------+--------+
+| Roll_no | Date       | Amt    |
++---------+------------+--------+
+|     101 | 2024-08-25 | 120.00 |
+|     104 | 2024-08-25 |  75.00 |
++---------+------------+--------+
+select * from Borrower;
++--------+--------+-------------+--------------------------+--------+
+| Rollin | Name   | DateofIssue | NameofBook               | Status |
++--------+--------+-------------+--------------------------+--------+
+|    101 | Rushi  | 2024-08-01  | Deep Learning            | R      |
+|    102 | Bob    | 2024-08-05  | Database Management      | I      |
+|    103 | Yash   | 2024-07-20  | PL/SQL Programming       | I      |
+|    104 | Dravid | 2024-08-10  | Data Structures          | R      |
+|    105 | Om     | 2024-07-15  | Operating Systems        | I      |
+|    106 | Rohit  | 2024-07-25  | Networking Basics        | I      |
+|    107 | Sachin | 2024-07-30  | Artificial Intelligence  | I      |
+|    108 | Virat  | 2024-08-12  | Machine Learning         | R      |
+|    109 | Hardik | 2024-08-15  | Computer Architecture    | I      |
+|    110 | Jack   | 2024-07-10  | Cybersecurity Essentials | I      |
++--------+--------+-------------+--------------------------+--------+
+-----------------------------------------------------------------------------------------
+--------------ass:6---------------------------------
+
+create database assignment6;
+use assignment6;
+
+CREATE TABLE N_RollCall (
+    roll_no Number PRIMARY KEY,
+    name VARCHAR2(100),
+    
+);
+
+CREATE TABLE O_RollCall (
+    roll_no Number PRIMARY KEY,
+    name VARCHAR2(100),
+    PRIMARY KEY (roll_no)
+);
+
+INSERT INTO N_RollCall (roll_no, name) VALUES (1, 'joshi'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (2, 'Joy'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (3, 'vansh'),
+INSERT INTO N_RollCall (roll_no, name) VALUES (4, 'Boby');
+
+INSERT INTO O_RollCall (roll_no, name) VALUES (2, 'Joy'),
+INSERT INTO O_RollCall (roll_no, name) (4, 'Bob'),
+INSERT INTO O_RollCall (roll_no, name) (5,'Amit');
+
+select * from N_RollCall;
+
+select * from O_RollCall;
+
+DECLARE
+     v_roll_no  O_RollCall.roll_no%TYPE;
+     v_name O_RollCall.name%TYPE;
+    
+     CURSOR c1 IS 
+         SELECT roll_no, name 
+         FROM O_RollCall
+         WHERE roll_no NOT IN (SELECT roll_no FROM N_RollCall);
+
+ BEGIN
+    OPEN c1;
+
+    LOOP
+         FETCH c1 INTO v_roll_no, v_name;
+        
+         EXIT WHEN c1%NOTFOUND;
+
+         INSERT INTO N_RollCall(roll_no, name) VALUES (v_roll_no, v_name);
+        
+     END LOOP;
+
+     
+     CLOSE c1;
+ END;
+select * from N_RollCall;
++---------+-------+
+| roll_no | name  |
++---------+-------+
+|       1 | joshi |
+|       2 | Joy   |
+|       3 | vansh  |
+|       4 | Boby   |
+|       5 | Amit  |
++---------+-------+
+
+------------------------------------------------------------------------------------------------------------ass:7------------------------------------------------------------
+
+CREATE DATABASE maker;
+USE maker;
+
+-- Create table for student marks
+CREATE TABLE stud_marks (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    total_marks INT
+);
+
+-- Create table for result with 'class' column
+CREATE TABLE result (
+    roll INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100),
+    class VARCHAR(50)
+);
+
+-- Insert sample data into stud_marks
+INSERT INTO stud_marks (name, total_marks)
+VALUES
+('kiran', 1300),
+('varun', 850),
+('rohit', 700),
+('ram', 400);
+
+-- Define the proc_grade procedure
+DELIMITER //
+
+CREATE PROCEDURE proc_grade(
+    IN p_name VARCHAR(100),
+    IN p_marks INT,
+    OUT p_class VARCHAR(50)
+)
+BEGIN
+    IF p_marks BETWEEN 990 AND 1500 THEN
+        SET p_class = 'distinction';
+    ELSEIF p_marks BETWEEN 900 AND 989 THEN
+        SET p_class = 'first class';
+    ELSEIF p_marks BETWEEN 825 AND 899 THEN
+        SET p_class = 'higher second class';
+    ELSE
+        SET p_class = 'not categorised';
+    END IF;
+END;
+//
+
+-- Define the process_student procedure
+CREATE PROCEDURE process_student()
+BEGIN
+    DECLARE v_name VARCHAR(100);
+    DECLARE v_marks INT;
+    DECLARE v_class VARCHAR(50);
+    DECLARE done INT DEFAULT 0;
+
+    -- Cursor to iterate through student marks
+    DECLARE cur CURSOR FOR SELECT name, total_marks FROM stud_marks;
+    DECLARE CONTINUE HANDLER FOR NOT FOUND SET done = 1;
+
+    OPEN cur;
+
+    -- Loop to process each student
+    read_loop: LOOP
+        FETCH cur INTO v_name, v_marks;
+        IF done THEN
+            LEAVE read_loop;
+        END IF;
+
+        -- Call procedure to determine class
+        CALL proc_grade(v_name, v_marks, v_class);
+
+        -- Insert result into result table
+        INSERT INTO result (name, class) VALUES (v_name, v_class);
+    END LOOP;
+
+    CLOSE cur;
+END;
+//
+
+DELIMITER ;
+
+-- Call the correct procedure
+CALL process_student();
+
+-- Display the results table
+SELECT * FROM result;
+-----------------------------------------------------------------------------------
+
+------------------------------ass:8----------------------------------
+
+CREATE DATABASE user;
+USE user;
+
+-- Create the library table
+CREATE TABLE library (
+    book_id INT PRIMARY KEY,
+    title VARCHAR(100),
+    author VARCHAR(100),
+    publication_year INT,
+    isbn VARCHAR(20)
+);
+
+-- Create the library_audit table
+CREATE TABLE library_audit (
+    audit_id INT AUTO_INCREMENT PRIMARY KEY,
+    book_id INT,
+    title VARCHAR(100),
+    author VARCHAR(100),
+    publication_year INT,
+    isbn VARCHAR(20),
+    action VARCHAR(10),
+    action_date TIMESTAMP
+);
+
+-- Create trigger for auditing updates
+DELIMITER //
+
+CREATE TRIGGER library_audit_trigger
+AFTER UPDATE ON library
+FOR EACH ROW
+BEGIN
+    INSERT INTO library_audit (book_id, title, author, publication_year, isbn, action, action_date)
+    VALUES (OLD.book_id, OLD.title, OLD.author, OLD.publication_year, OLD.isbn, 'update', NOW());
+END;
+//
+
+-- Create trigger for auditing deletions
+CREATE TRIGGER library_delete_trigger
+BEFORE DELETE ON library
+FOR EACH ROW
+BEGIN
+    INSERT INTO library_audit (book_id, title, author, publication_year, isbn, action, action_date)
+    VALUES (OLD.book_id, OLD.title, OLD.author, OLD.publication_year, OLD.isbn, 'delete', NOW());
+END;
+//
+
+DELIMITER ;
+
+-- Insert sample data into the library table
+INSERT INTO library (book_id, title, author, publication_year, isbn)
+VALUES
+(1, 'To Kill a Mockingbird', 'Harper Lee', 1960, '1234567'),
+(2, 'To Kill', 'Gangulee', 1949, '07654');
+
+-- Update a record to trigger the update trigger
+UPDATE library
+SET publication_year = 1961
+WHERE book_id = 1;
+
+-- Delete a record to trigger the delete trigger
+DELETE FROM library
+WHERE book_id = 2;
+
+-- View the library_audit table
+SELECT * FROM library_audit;
+------------------------------------------------------------------------------------------
+-----------------------ass:9-----------------------------------------------------------
+
+import java.sql.*;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Hello world!");
+
+        String query1 = "create table Stud2 (ID int primary key, name varchar(30), marks int)";
+        String query2 = "insert into Stud2(ID, name, marks) values (1,'Rushi',80), (2,'Virat',65), (3,'Rohit',70), (4,'Dravid',60), (5,'Sachin',75)";
+        String query3 = "select * from Stud2";
+        String query4 = "update Stud2 set marks=50 where ID=3 ";
+        String query5 = "delete from Stud2 where ID=1";
+        String query6 = "alter table Stud2 add dept varchar(20)";
+        String query7 = "alter table Stud2 modify dept varchar(20) default 'CSE-AI'";
+        String query8 = "insert into Stud2(ID, name, marks) values (6,'Hardik',78) ";
+        String query9 = "alter table Stud2 drop dept";
+
+        try{
+            Connection con = DriverManager.getConnection( "jdbc:mysql://localhost:3306/db1", "root", "Rushi@009");
+
+            Statement st = con.createStatement();
+
+            st.executeUpdate(query1);
+            System.out.println("Table created successfully.");
+
+            st.executeUpdate(query2);
+            System.out.println("Data added successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query4);
+            System.out.println("Data updated successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query5);
+            System.out.println("Data deleted successfully.");
+            showTableData(st,false);
+
+            st.executeUpdate(query6);
+            System.out.println("dept added successfully.");
+
+            st.executeUpdate(query7);
+            System.out.println("dept modified successfully.");
+            showTableData(st,true);
+
+            st.executeUpdate(query8);
+            System.out.println("dept set to CSE-AI as default successfully.");
+            showTableData(st, true);
+
+            st.executeUpdate(query9);
+            System.out.println("dept dropped successfully.");
+            showTableData(st, false);
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void showTableData(Statement st, boolean dept) {
+        String query3 = "select * from Stud2";
+
+        try {
+            if(dept){
+                ResultSet rs = st.executeQuery(query3);
+                while (rs.next()) {
+                    System.out.println("ID: " + rs.getInt("ID") + ", Name: " + rs.getString("name") + ", Marks: " + rs.getInt("marks") + ", Dept: " + rs.getString("dept"));
+                }
+            }else{
+//                System.out.println("Updated data in Stud2:");
+                ResultSet rs = st.executeQuery(query3);
+                while (rs.next()) {
+                    System.out.println("ID: " + rs.getInt("ID") + ", Name: " + rs.getString("name") + ", Marks: " + rs.getInt("marks"));
+                }
+            }
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+}
+-----------------------------------------------------------------------------------------
+------------------------------------ass:10--------------------------------
+1.	Create Collection Employee 
+
+db.createCollection("Employee")
+{ ok: 1 }
+
+2.	Insert 5 documents to Employee 
+
+db.Employee.insertMany([ { name: "Sachin", age: 25, salary: 40000, department: "Programmer" },{ name: "Hardik", age: 28, salary: 60000, department: "Marketing" },{ name: "Virat", age: 30, salary: 45000, department: "HR" }, { name: "Rohit", age: 35, salary: 70000, department: "Finance" },{ name: "Dravid", age: 32, salary: 55000, department: "Sales" } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670359b44528fce0a6c73bf8'),
+    '1': ObjectId('670359b44528fce0a6c73bf9'),
+    '2': ObjectId('670359b44528fce0a6c73bfa'),
+    '3': ObjectId('670359b44528fce0a6c73bfb'),
+    '4': ObjectId('670359b44528fce0a6c73bfc')
+  }
+}
+
+3.	Read all the documents 
+
+test> db.Employee.find()
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  }
+]
+
+4.	Display all the documents in a formatted manner 
+
+test> db.Employee.find().pretty()
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  }
+]
+
+5.	Insert another 3 documents with a single insert command 
+
+test> db.Employee.insertMany([{ name: "Yash", age: 27, salary: 48000, department: "HR" },{ name: "Jasprit", age: 31, salary: 62000, department: "Operations" },{ name: "Surya", age: 26, salary: 53000, department: "Finance" } ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('67035d684528fce0a6c73bfd'),
+    '1': ObjectId('67035d684528fce0a6c73bfe'),
+    '2': ObjectId('67035d684528fce0a6c73bff')
+  }
+}
+
+6.	Insert one document using save() method instead of insert() method 
+
+test> db.Employee.insertOne({ name: "Joe", age: 25, salary: 52000, department: "Production" })
+{
+  acknowledged: true,
+  insertedId: ObjectId('6703605f4528fce0a6c73c00')
+}
+
+7.	Read all the employees whose name is „Joe‟ and age is 25 
+
+db.Employee.find({ name: "Joe", age: 25 })
+[
+  {
+    _id: ObjectId('6703605f4528fce0a6c73c00'),
+    name: 'Joe',
+    age: 25,
+    salary: 52000,
+    department: 'Production'
+  }
+]
+
+8.	Read all the employees whose salary is greater than 5000 
+
+test> db.Employee.find({ salary: { $gt: 5000 } })
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfe'),
+    name: 'Jasprit',
+    age: 31,
+    salary: 62000,
+    department: 'Operations'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('6703605f4528fce0a6c73c00'),
+    name: 'Joe',
+    age: 25,
+    salary: 52000,
+    department: 'Production'
+  }
+]
+
+9.	Update the department of employee „Joe‟ from „Production‟ to „Operations‟ 
+
+test> db.Employee.updateOne({ name: "Joe", department: "Production" }, { $set: { department: "Operations" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+10.	Increment the salary of „Joe‟ by Rs. 2000 
+
+test> db.Employee.updateOne({ name: "Joe" }, { $inc: { salary: 2000 } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+11.	Add email Id for „Joe‟ (using $AddToSet modifier with update) 
+
+test> db.Employee.updateOne({ name: "Joe" }, { $addToSet: { email: "joe@example.com" } })
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+
+12.	Remove all the documents for the employees belonging to „Operations‟ department 
+
+db.Employee.deleteMany({ department: "Operations" })
+{ acknowledged: true, deletedCount: 2 }
+
+13.	Sort all the documents according to the name of employees 
+
+test> db.Employee.find().sort({ name: 1 })
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfb'),
+    name: 'Rohit',
+    age: 35,
+    salary: 70000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  }
+]
+
+14.	Display only first three documents 
+
+   db.Employee.find().limit(3)
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf8'),
+    name: 'Sachin',
+    age: 25,
+    salary: 40000,
+    department: 'Programmer'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bf9'),
+    name: 'Hardik',
+    age: 28,
+    salary: 60000,
+    department: 'Marketing'
+  },
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfa'),
+    name: 'Virat',
+    age: 30,
+    salary: 45000,
+    department: 'HR'
+  }
+]
+
+15.	Display all the documents except first 4 
+
+db.Employee.find().skip(4)
+[
+  {
+    _id: ObjectId('670359b44528fce0a6c73bfc'),
+    name: 'Dravid',
+    age: 32,
+    salary: 55000,
+    department: 'Sales'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bfd'),
+    name: 'Yash',
+    age: 27,
+    salary: 48000,
+    department: 'HR'
+  },
+  {
+    _id: ObjectId('67035d684528fce0a6c73bff'),
+    name: 'Surya',
+    age: 26,
+    salary: 53000,
+    department: 'Finance'
+  }
+]
+
+16.	Use all the administrative commands of MongoDB 
+
+test> db.stats()
+{
+  db: 'test',
+  collections: Long('1'),
+  views: Long('0'),
+  objects: Long('7'),
+  avgObjSize: 82.28571428571429,
+  dataSize: 576,
+  storageSize: 36864,
+  indexes: Long('1'),
+  indexSize: 36864,
+  totalSize: 73728,
+  scaleFactor: Long('1'),
+  fsUsedSize: 123984261120,
+  fsTotalSize: 394115674112,
+  ok: 1
+}
+
+db.getCollectionNames()
+[ 'Employee' ]
+
+db.Employee.drop()
+true
+------------------------------------------------------------------------------------------
+-------------ass:11------------------------
+
+Aim : Implement aggregation and indexing with suitable examples using MongoDB. 
+Problem Statement: 
+1.	Create Collection Product 
+
+test> db.createCollection("Product")
+{ ok: 1 }
+
+2.	Insert the documents by considering the keys name, company, cost 
+
+test> db.Product.insertMany([ { name: "Laptop", company: "Dell", cost: 50000 },{ name: "Smartphone", company: "Samsung", cost: 30000 },{ name: "Tablet", company: "Apple", cost: 45000 },{ name: "Smartwatch", company: "Apple", cost: 20000 },{ name: "Desktop", company: "Dell", cost: 60000 }])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670a75666d4c413fe8c73bf8'),
+    '1': ObjectId('670a75666d4c413fe8c73bf9'),
+    '2': ObjectId('670a75666d4c413fe8c73bfa'),
+    '3': ObjectId('670a75666d4c413fe8c73bfb'),
+    '4': ObjectId('670a75666d4c413fe8c73bfc')
+  }
+}
+
+3.	Aggregate the documents in the collection by grouping company name and displaying minimum and maximum price of product for the same company 
+
+test> db.Product.aggregate([{$group: {_id: "$company",minPrice: { $min: "$cost" },maxPrice: { $max: "$cost" } }},{ $sort: { _id: 1 } }])
+[
+  { _id: 'Apple', minPrice: 20000, maxPrice: 45000 },
+  { _id: 'Dell', minPrice: 50000, maxPrice: 60000 },
+  { _id: 'Samsung', minPrice: 30000, maxPrice: 30000 }
+]
+
+4. Show the sorted result on the basis of company 
+
+test> db.Product.find().sort({ company: 1 })
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfa'),
+    name: 'Tablet',
+    company: 'Apple',
+    cost: 45000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfb'),
+    name: 'Smartwatch',
+    company: 'Apple',
+    cost: 20000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf8'),
+    name: 'Laptop',
+    company: 'Dell',
+    cost: 50000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfc'),
+    name: 'Desktop',
+    company: 'Dell',
+    cost: 60000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf9'),
+    name: 'Smartphone',
+    company: 'Samsung',
+    cost: 30000
+  }
+
+5.	Display number of documents in the collection 
+
+test> db.Product.countDocuments()
+5
+
+6.	Display distinct company names in the collection 
+
+test> db.Product.distinct("company")
+[ 'Apple', 'Dell', 'Samsung' ]
+
+7.	Display company name with its count for documents 
+
+test> db.Product.aggregate([{ $group: { _id: "$company", count: { $sum: 1 } } }])
+[
+  { _id: 'Dell', count: 2 },
+  { _id: 'Samsung', count: 1 },
+  { _id: 'Apple', count: 2 }
+]
+
+8.	Limit the result for one document only 
+
+test> db.Product.find().limit(1)
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bf8'),
+    name: 'Laptop',
+    company: 'Dell',
+    cost: 50000
+  }
+]
+
+9.	Limit the result by skipping first two documents 
+
+test> db.Product.find().skip(2)
+[
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfa'),
+    name: 'Tablet',
+    company: 'Apple',
+    cost: 45000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfb'),
+    name: 'Smartwatch',
+    company: 'Apple',
+    cost: 20000
+  },
+  {
+    _id: ObjectId('670a75666d4c413fe8c73bfc'),
+    name: 'Desktop',
+    company: 'Dell',
+    cost: 60000
+  }
+]
+
+10.	Insert 10 documents by using for loop in the collection staff by considering keys Staff_id, staff_name, age 
+
+test> db.createCollection("staff")
+{ ok: 1 }
+test> let staffData = [];for (let i = 1; i <= 10; i++) {staffData.push({ Staff_id: i, staff_name: "Staff" + i, age: 20 + i });}db.staff.insertMany(staffData);
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('670a7c3c6d4c413fe8c73c07'),
+    '1': ObjectId('670a7c3c6d4c413fe8c73c08'),
+    '2': ObjectId('670a7c3c6d4c413fe8c73c09'),
+    '3': ObjectId('670a7c3c6d4c413fe8c73c0a'),
+    '4': ObjectId('670a7c3c6d4c413fe8c73c0b'),
+    '5': ObjectId('670a7c3c6d4c413fe8c73c0c'),
+    '6': ObjectId('670a7c3c6d4c413fe8c73c0d'),
+    '7': ObjectId('670a7c3c6d4c413fe8c73c0e'),
+    '8': ObjectId('670a7c3c6d4c413fe8c73c0f'),
+    '9': ObjectId('670a7c3c6d4c413fe8c73c10')
+  }
+}
+
+11.	Find the document where Staff_id is 2 and explain different parameters for running the query. Observe the number of scanned objects, time in milliseconds, type of cursor etc. 
+
+test> db.staff.find({ Staff_id: 2 }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: { Staff_id: { '$eq': 2 } },
+    indexFilterSet: false,
+    queryHash: '1731B8FC',
+    planCacheKey: '6AD18E14',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 2,
+    executionTimeMillis: 6,
+    totalKeysExamined: 0,
+    totalDocsExamined: 20,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      nReturned: 2,
+      executionTimeMillisEstimate: 0,
+      works: 21,
+      advanced: 2,
+      needTime: 18,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 20
+    }
+  },
+  command: { find: 'staff', filter: { Staff_id: 2 }, '$db': 'test' },
+  serverInfo: {
+    host: 'Rushi-PC',
+    port: 27017,
+    version: '8.0.0',
+    gitVersion: 'd7cd03b239ac39a3c7d63f7145e91aca36f93db6'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+12.	create index on staff_name 
+
+test> db.staff.createIndex({ staff_name: 1 })
+staff_name_1
+
+13.	Run the query for point no 11 and observe the change in values for different parameters of the query 
+
+Comleted in point no 11
+
+14.	Find the document of the staff where age is 40 and staff_name is „Karan‟. Observe the index name used for running the query 
+
+test> db.staff.find({ age: 40, staff_name: "Karan" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: {
+      '$and': [ { age: { '$eq': 40 } }, { staff_name: { '$eq': 'Karan' } } ]
+    },
+    indexFilterSet: false,
+    queryHash: '0800CED6',
+    planCacheKey: '6D4D8E9F',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      filter: { age: { '$eq': 40 } },
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { staff_name: 1 },
+        indexName: 'staff_name_1',
+        isMultiKey: false,
+        multiKeyPaths: { staff_name: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { staff_name: [ '["Karan", "Karan"]' ] }
+      }
+    },
+    rejectedPlans: []
+  },
+15.	create the index on age and Staff_name 
+
+test> db.staff.createIndex({ age: 1, staff_name: 1 })
+age_1_staff_name_1
+
+16.	Run the query for point no. 14 and observe the index used for running the querying 
+
+Completed in point 14
+
+17.	Drop the index created on age and Staff_name and run the query for point no. 14 again and observe the type of index 
+
+test> db.staff.dropIndex({ age: 1, staff_name: 1 })
+{ nIndexesWas: 3, ok: 1 }
+test> db.staff.find({ age: 40, staff_name: "Karan" }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: {
+      '$and': [ { age: { '$eq': 40 } }, { staff_name: { '$eq': 'Karan' } } ]
+    },
+    indexFilterSet: false,
+    queryHash: '0800CED6',
+    planCacheKey: '6D4D8E9F',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'FETCH',
+      filter: { age: { '$eq': 40 } },
+      inputStage: {
+        stage: 'IXSCAN',
+        keyPattern: { staff_name: 1 },
+        indexName: 'staff_name_1',
+        isMultiKey: false,
+        multiKeyPaths: { staff_name: [] },
+        isUnique: false,
+        isSparse: false,
+        isPartial: false,
+        indexVersion: 2,
+        direction: 'forward',
+        indexBounds: { staff_name: [ '["Karan", "Karan"]' ] }
+      }
+    },
+18.	Drop the index created on Staff_name and run the query for pint no. 11 and observe the type of index
+
+test> db.staff.dropIndex({ staff_name: 1 })
+{ nIndexesWas: 2, ok: 1 }
+test> db.staff.find({ Staff_id: 2 }).explain("executionStats")
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'test.staff',
+    parsedQuery: { Staff_id: { '$eq': 2 } },
+    indexFilterSet: false,
+    queryHash: '1731B8FC',
+    planCacheKey: '6AD18E14',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      direction: 'forward'
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 2,
+    executionTimeMillis: 0,
+    totalKeysExamined: 0,
+    totalDocsExamined: 20,
+    executionStages: {
+      isCached: false,
+      stage: 'COLLSCAN',
+      filter: { Staff_id: { '$eq': 2 } },
+      nReturned: 2,
+      executionTimeMillisEstimate: 0,
+      works: 21,
+      advanced: 2,
+      needTime: 18,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      direction: 'forward',
+      docsExamined: 20
+    }
+  },
+  command: { find: 'staff', filter: { Staff_id: 2 }, '$db': 'test' },
+  serverInfo: {
+    host: 'Rushi-PC',
+    port: 27017,
+    version: '8.0.0',
+    gitVersion: 'd7cd03b239ac39a3c7d63f7145e91aca36f93db6'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+} 
+19.	Create a unique index on Staff_name and try inserting documents with the duplicate Staff_names. Observe the result 
+
+test> db.staff.createIndex({ staff_name: 1 }, { unique: true })
+------------------------------------------------------------------------------------------------
